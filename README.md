@@ -4,7 +4,7 @@
 
 - The main purpose of this **repo** is to serve as the backend to the larger group project we're calling "Classroom Wars". The GitHub repo's can all be found [here](https://github.com/Classroom-Wars).
 
--The main purpose of this **application** is to serve teachers in their never-ending quest to engage students in a more meaningful way. Our top priority was providing teachers the tools to engage students in the remote educational setting using gamificaiton methods, but this application can most definitely be applied to the in-person educational setting.
+-The main purpose of this **application** is to serve teachers in their never-ending quest to engage students in a more meaningful way. Our top priority was providing teachers the tools to engage students in the remote educational setting using gamificaiton methods, but this application can most definitely be applied to the in-person educational setting. 
 
 ## Contributors
 <br>
@@ -14,7 +14,7 @@ In no particular order...
 
 [<img align="left" alt="arique github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-arique]
 [<img align="left" alt="arique linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-arique]
-Mariveliz Arique Ortiz 
+Mariveliz Arique Ortiz
 <br />
 <br>
 Cam Chery
@@ -96,7 +96,7 @@ Travis McKinstry
 
 [git-jud]: https://github.com/judithpillado
 [linkedin-jud]: https://www.linkedin.com/in/judith-pillado/
- 
+
 [git-tyler]: https://github.com/fieldstyler
 [linkedin-tyler]: https://www.linkedin.com/in/tyler-fields-583084197/
 
@@ -111,4 +111,3 @@ Travis McKinstry
 
 [git-travis]: https://github.com/TravisGM92
 [linkedin-travis]: https://www.linkedin.com/in/travis-mckinstry/
-
