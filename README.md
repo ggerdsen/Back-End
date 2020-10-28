@@ -11,120 +11,63 @@
 In no particular order...
 <br><br>
 
-<div align="right">Mariveliz Arique Ortiz</div>
 
+[<img align="left" alt="arique github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-arique]
+[<img align="left" alt="arique linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-arique]
+Mariveliz Arique Ortiz 
 <br />
-
-[<img align="right" alt="arique github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-arique]
-[<img align="right" alt="arique linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-arique]
+<br>
+Cam Chery
+[<img align="left" alt="cam github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-cam]
+[<img align="left" alt="cam linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-cam]
 <br />
+<br>
+Christopher Allbritton
+[<img align="left" alt="mckinstrybros website" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-chris]
+[<img align="left" alt="Chris' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-chris]
 <br />
-
-<div align="right">Cam Chery</div>
-
+<br>
+Corey Carter
+[<img align="left" alt="corey github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-corey]
+[<img align="left" alt="corey linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-corey]
 <br />
-
-[<img align="right" alt="cam github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-cam]
-[<img align="right" alt="cam linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-cam]
+<br>
+Dan Halverson
+[<img align="left" alt="Dan github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-dan]
+[<img align="left" alt="Dan linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-dan]
 <br />
+<br>
+Garrett Gerdsen
+[<img align="left" alt="Garrett github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-gar]
+[<img align="left" alt="Garrett linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-gar]
 <br />
-
-
-<div align="right">Christopher Allbritton</div>
-
-<br />
-
-[<img align="right" alt="mckinstrybros website" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-chris]
-[<img align="right" alt="Chris' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-chris]
-
-<br />
-<br />
-
-
-<div align="right">Corey Carter</div>
-
-<br />
-
-[<img align="right" alt="corey github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-corey]
-[<img align="right" alt="corey linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-corey]
-
-<br />
-<br />
-
-<div align="right">Dan Halverson</div>
-
-<br />
-
-[<img align="right" alt="Dan github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-dan]
-[<img align="right" alt="Dan linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-dan]
-
-<br />
-<br />
-
-<div align="right">Garret Gerdsen</div>
-
-<br />
-
-[<img align="right" alt="Garret github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-gar]
-[<img align="right" alt="Garret linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-gar]
-
-<br />
-<br />
-
+<br>
 Judith Pillado
-
-<div align="left">Judith Pillado</div>
-
-<br />
-
 [<img align="left" alt="Judith github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-jud]
 [<img align="left" alt="Judith linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-jud]
 <br />
-<br />
-
-<div align="left">Tyler Fields</div>
-
-<br />
-
+<br>
+Tyler Fields
 [<img align="left" alt="Tyler github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-tyler]
 [<img align="left" alt="Tyler linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-tyler]
-
 <br />
-<br />
-
-<div align="left">Pryia Power</div>
-
-<br />
-
+<br>
+Pryia Power
 [<img align="left" alt="Pryia github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-pr]
 [<img align="left" alt="Pryia linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-pr]
 <br />
-<br />
-
-<div align="left">Saryn Mooney</div>
-
-<br />
-
+<br>
+Saryn Mooney
 [<img align="left" alt="Saryn github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-sar]
 [<img align="left" alt="Saryn linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-sar]
-
 <br />
-<br />
-
-<div align="left">Phillip DeFraties</div>
-
-<br />
-
+<br>
+Phillip DeFraties
 [<img align="left" alt="Phillip github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-phil]
 [<img align="left" alt="Phillip linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-phil]
-
 <br />
-<br />
-
-<div align="left">Travis McKinstry</div>
-
-<br />
-
+<br>
+Travis McKinstry
 [<img align="left" alt="Travis github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-travis]
 [<img align="left" alt="Travis linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-travis]
 <br />
@@ -153,7 +96,7 @@ Judith Pillado
 
 [git-jud]: https://github.com/judithpillado
 [linkedin-jud]: https://www.linkedin.com/in/judith-pillado/
-
+ 
 [git-tyler]: https://github.com/fieldstyler
 [linkedin-tyler]: https://www.linkedin.com/in/tyler-fields-583084197/
 
