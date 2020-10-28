@@ -6,6 +6,14 @@
 
 -The main purpose of this **application** is to serve teachers in their never-ending quest to engage students in a more meaningful way. Our top priority was providing teachers the tools to engage students in the remote educational setting using gamificaiton methods, but this application can most definitely be applied to the in-person educational setting. 
 
+## Using this repo & using the app
+
+1. Follow the instructions below under "Set-up" to make sure you've got the correct environments
+
+## Set-up
+
+1. 
+
 ## Contributors
 <br>
 In no particular order...
