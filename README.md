@@ -11,11 +11,11 @@
 In no particular order...
 <br><br>
 
+<div align="right">Mariveliz Arique Ortiz</div>
 
-
+<br>
 [<img align="right" alt="arique github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-arique]
 [<img align="right" alt="arique linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-arique]
-<div align="right">Mariveliz Arique Ortiz</div>
 <br />
 <br>
 Cam Chery
