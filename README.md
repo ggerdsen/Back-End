@@ -18,10 +18,12 @@ In no particular order...
 [<img align="right" alt="arique github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-arique]
 [<img align="right" alt="arique linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-arique]
 <br />
-<br>
-Cam Chery
-[<img align="left" alt="cam github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-cam]
-[<img align="left" alt="cam linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-cam]
+<br />
+
+<div align="right">Cam Chery</div>
+<br />
+[<img align="right" alt="cam github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-cam]
+[<img align="right" alt="cam linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-cam]
 <br />
 <br>
 Christopher Allbritton
