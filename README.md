@@ -12,7 +12,8 @@ In no particular order...
 <br><br>
 
 
-<div align="right">[<img align="left" alt="arique github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-arique]
+<div align="right">
+[<img align="left" alt="arique github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-arique]
 [<img align="left" alt="arique linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-arique]
 Mariveliz Arique Ortiz</div>
 <br />
