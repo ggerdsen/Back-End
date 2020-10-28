@@ -11,9 +11,13 @@
 In no particular order...
 <br><br>
 
-<div align="left"> Mariveliz Arique Ortiz </div>
+
 [<img align="left" alt="arique github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-arique]
-[<img align="left" alt="arique linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-arique]<div align="right">Cam Chery</div>
+[<img align="left" alt="arique linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-arique]
+Mariveliz Arique Ortiz 
+<br />
+<br>
+Cam Chery
 [<img align="left" alt="cam github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-cam]
 [<img align="left" alt="cam linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-cam]
 <br />
