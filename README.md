@@ -4,7 +4,7 @@
 
 - The main purpose of this **repo** is to serve as the backend to the larger group project we're calling "Classroom Wars". The GitHub repo's can all be found [here](https://github.com/Classroom-Wars).
 
--The main purpose of this **application** is to serve teachers in their never-ending quest to engage students in a more meaningful way. Our top priority was providing teachers the tools to engage students in the remote educational setting using gamificaiton methods, but this application can most definitely be applied to the in-person educational setting. 
+- The main purpose of this **application** is to serve teachers in their never-ending quest to engage students in a more meaningful way. Our top priority was providing teachers the tools to engage students in the remote educational setting using gamificaiton methods, but this application can most definitely be applied to the in-person educational setting. 
 
 ## Using this repo & using the app
 
