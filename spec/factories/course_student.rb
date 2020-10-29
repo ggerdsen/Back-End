@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :course_student do
     points { Faker::Number.within(range: 0..1000) }

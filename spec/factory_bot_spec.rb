@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'FactoryBot' do
@@ -34,7 +36,7 @@ RSpec.describe 'FactoryBot' do
     end
   end
 
-   it 'creates a course_student' do
+  it 'creates a course_student' do
     create_list(:course_student, 3)
 
     expect(CourseStudent.all.count).to eq(3)
@@ -42,5 +44,5 @@ RSpec.describe 'FactoryBot' do
       expect(course_student.points).to be_an(Integer)
       expect(course_student.id).to be_an(Integer)
     end
-  end 
-end  
+  end
+end
