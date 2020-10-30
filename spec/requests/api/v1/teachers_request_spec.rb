@@ -1,109 +1,100 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'Teachers API' do
-  it 'sends a list of students' do
+  it 'sends a list of teachers' do
     teachers = create_list(:teacher, 3)
-
     get '/api/v1/teachers'
 
     expect(response).to be_successful
     teachers = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
+
     expect(teachers).to have_key(:data)
     expect(teachers[:data]).to be_an(Array)
     expect(teachers[:data].count).to eq(3)
 
     teacher = teachers[:data][0]
 
-    expect(student).to have_key(:id)
-    expect(student[:id]).to be_an(String)
+    expect(teacher).to have_key(:id)
+    expect(teacher[:id]).to be_an(String)
 
-    expect(student).to have_key(:attributes)
-    expect(student[:attributes]).to be_a(Hash)
+    expect(teacher).to have_key(:attributes)
+    expect(teacher[:attributes]).to be_a(Hash)
 
-    expect(student[:attributes]).to have_key(:name)
-    expect(student[:attributes][:name]).to be_a(String)
+    expect(teacher[:attributes]).to have_key(:name)
+    expect(teacher[:attributes][:name]).to be_a(String)
 
-    expect(student).to have_key(:relationships)
-    expect(student[:relationships]).to be_a(Hash)
+    expect(teacher).to have_key(:relationships)
+    expect(teacher[:relationships]).to be_a(Hash)
 
-    expect(student[:relationships]).to have_key(:courses)
-    expect(student[:relationships][:courses]).to be_a(Hash)
+    expect(teacher[:relationships]).to have_key(:courses)
+    expect(teacher[:relationships][:courses]).to be_a(Hash)
 
-    expect(student[:relationships][:courses]).to have_key(:data)
-    expect(student[:relationships][:courses][:data]).to be_an(Array)
-
-    expect(student[:relationships][:courses][:data].count).to eq(3)
-    expect(student[:relationships][:courses][:data][0]).to have_key(:id)
-    expect(student[:relationships][:courses][:data][0]).to have_key(:type)
+    expect(teacher[:relationships][:courses]).to have_key(:data)
+    expect(teacher[:relationships][:courses][:data]).to be_an(Array)
   end
 
-  it 'can get one student by its id' do
-    id = create(:student).id
+  it 'can get one teacher by its id' do
+    id = create(:teacher).id
+    get "/api/v1/teachers/#{id}"
 
-    get "/api/v1/students/#{id}"
+    expect(response).to be_successful
+    teacher = JSON.parse(response.body, symbolize_names: true)
 
-    student = JSON.parse(response.body, symbolize_names: true)
+    teacher = teacher[:data]
 
-    student = student[:data]
+    expect(teacher).to have_key(:id)
+    expect(teacher[:id]).to be_an(String)
 
-    expect(student).to have_key(:id)
-    expect(student[:id]).to be_an(String)
+    expect(teacher).to have_key(:attributes)
+    expect(teacher[:attributes]).to be_a(Hash)
 
-    expect(student).to have_key(:attributes)
-    expect(student[:attributes]).to be_a(Hash)
+    expect(teacher[:attributes]).to have_key(:name)
+    expect(teacher[:attributes][:name]).to be_a(String)
 
-    expect(student[:attributes]).to have_key(:name)
-    expect(student[:attributes][:name]).to be_a(String)
+    expect(teacher).to have_key(:relationships)
+    expect(teacher[:relationships]).to be_a(Hash)
 
-    expect(student).to have_key(:relationships)
-    expect(student[:relationships]).to be_a(Hash)
+    expect(teacher[:relationships]).to have_key(:courses)
+    expect(teacher[:relationships][:courses]).to be_a(Hash)
 
-    expect(student[:relationships]).to have_key(:courses)
-    expect(student[:relationships][:courses]).to be_a(Hash)
-
-    expect(student[:relationships][:courses]).to have_key(:data)
-    expect(student[:relationships][:courses][:data]).to be_an(Array)
+    expect(teacher[:relationships][:courses]).to have_key(:data)
+    expect(teacher[:relationships][:courses][:data]).to be_an(Array)
   end
 
-  it 'can create a new student' do
-    student_id = create(:student).id
-    student_params = { name: 'Joe' }
+  it 'can create a new teacher' do
+    teacher_id = create(:teacher).id
+    teacher_params = { name: 'Mr. John Kimble' }
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
-    post '/api/v1/students', headers: headers, params: JSON.generate(student_params)
-
-    created_student = Student.last
-
+    post '/api/v1/teachers', headers: headers, params: JSON.generate(teacher_params)
     expect(response).to be_successful
-    expect(created_student.name).to eq(student_params[:name])
+
+    created_teacher = Teacher.last
+    expect(created_teacher.name).to eq(teacher_params[:name])
   end
 
-  it 'can update an student' do
-    id = create(:student).id
-    previous_name = Student.last.name
-    student_params = { name: 'Joe' }
+  it 'can update a teacher' do
+    id = create(:teacher).id
+    previous_name = Teacher.last.name
+    teacher_params = { name: 'Mr. John Kimble' }
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
-    patch "/api/v1/students/#{id}", headers: headers, params: JSON.generate(student_params)
-    student = Student.find_by(id: id)
-
+    patch "/api/v1/teachers/#{id}", headers: headers, params: JSON.generate(teacher_params)
     expect(response).to be_successful
-    expect(student.name).to_not eq(previous_name)
-    expect(student.name).to eq('Joe')
+
+    teacher = Teacher.find_by(id: id)
+    expect(teacher.name).to_not eq(previous_name)
+    expect(teacher.name).to eq('Mr. John Kimble')
   end
 
-  it 'can delete an student' do
-    student = create(:student)
+  it 'can delete a teacher' do
+    teacher = create(:teacher)
+    expect(Teacher.count).to eq(1)
 
-    expect(Student.count).to eq(1)
-
-    expect { delete "/api/v1/students/#{student.id}" }.to change(Student, :count).by(-1)
-
+    expect { delete "/api/v1/teachers/#{teacher.id}" }.to change(Teacher, :count).by(-1)
     expect(response).to be_successful
-    expect(Student.count).to eq(0)
-    expect { Student.find(student.id) }.to raise_error(ActiveRecord::RecordNotFound)
+
+    expect(Teacher.count).to eq(0)
+    expect { Teacher.find(teacher.id) }.to raise_error(ActiveRecord::RecordNotFound)
   end
 end

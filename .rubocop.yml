@@ -3,7 +3,9 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
-    - 'bin/{rails,rake}'
+    - 'bin/{rails,rake,setup,update}'
     - !ruby/regexp /old_and_unused\.rb$/
 Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
   Enabled: false
