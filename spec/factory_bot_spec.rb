@@ -8,7 +8,8 @@ RSpec.describe 'FactoryBot' do
 
     expect(Student.all.count).to eq(3)
     Student.all.each do |student|
-      expect(student.name).to be_a(String)
+      expect(student.first_name).to be_a(String)
+      expect(student.last_name).to be_a(String)
       expect(student.id).to be_an(Integer)
     end
   end
