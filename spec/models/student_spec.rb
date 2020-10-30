@@ -4,7 +4,15 @@ require 'rails_helper'
 
 RSpec.describe Student do
   describe 'Validations' do
-    it { should validate_presence_of :name }
+    it { should validate_presence_of :first_name }
+    it { should validate_presence_of :last_name }
+    it { should validate_presence_of :provider }
+    it { should validate_presence_of :uid }
+    it { should validate_uniqueness_of :uid }
+    it { should validate_presence_of :email }
+    it { should validate_uniqueness_of :email }
+    it { should validate_presence_of :token }
+    it { should validate_presence_of :refresh_token }
   end
 
   describe 'OAuth' do
@@ -20,7 +28,6 @@ RSpec.describe Student do
         credentials: {
           token: "abcdefg12345",
           refresh_token: "12345abcdefg",
-          expires_at: DateTime.now
         }
       }
       Student.update_or_create(auth)
@@ -28,12 +35,11 @@ RSpec.describe Student do
 
       expect(new_user.provider).to eq("google")
       expect(new_user.uid).to eq("12345678910")
-      expect(new_user.email).to eq("jesse@mountainmantechnologies.com")
-      expect(new_user.first_name).to eq("Jesse")
-      expect(new_user.last_name).to eq("Spevack")
+      expect(new_user.email).to eq("priya@power.com")
+      expect(new_user.first_name).to eq("Priya")
+      expect(new_user.last_name).to eq("Power")
       expect(new_user.token).to eq("abcdefg12345")
       expect(new_user.refresh_token).to eq("12345abcdefg")
-      expect(new_user.oauth_expires_at).to eq(auth[:credentials][:expires_at])
-
+    end
   end
 end
