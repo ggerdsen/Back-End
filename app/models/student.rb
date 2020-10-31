@@ -14,15 +14,14 @@ class Student < ApplicationRecord
 
   def self.update_or_create(auth)
     student = Student.find_by(uid: auth[:uid]) || Student.new
-
     student.attributes = {
       provider: auth[:provider],
       uid: auth[:uid],
-      email: auth[:info][:email],
-      first_name: auth[:info][:first_name],
-      last_name: auth[:info][:last_name],
-      token: auth[:credentials][:token],
-      refresh_token: auth[:credentials][:refresh_token]
+      email: auth[:email],
+      first_name: auth[:first_name],
+      last_name: auth[:last_name],
+      token: auth[:token],
+      refresh_token: auth[:refresh_token]
       }
 
     student.save
