@@ -19,7 +19,8 @@ RSpec.describe 'FactoryBot' do
 
     expect(Teacher.all.count).to eq(3)
     Teacher.all.each do |teacher|
-      expect(teacher.name).to be_a(String)
+      expect(teacher.first_name).to be_a(String)
+      expect(teacher.last_name).to be_a(String)
       expect(teacher.id).to be_an(Integer)
     end
   end
