@@ -5,9 +5,8 @@ module Api
     module Teachers
       class CoursesController < ApplicationController
 
-        def edit
-          render json: TeacherCourseSerializer.new(Course.update(params[:id]))
-          binding.pry
+        def update
+          render json: TeacherCourseSerializer.new(Course.update(course_params))
         end
 
         def index
@@ -17,8 +16,8 @@ module Api
         def show
           render json: TeacherCourseSerializer.new(Course.find(params[:id]))
         end
-        private
 
+        private
         def course_params
           params.permit(:name, :course_code, :school_name)
         end
