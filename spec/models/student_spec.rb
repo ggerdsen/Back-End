@@ -20,19 +20,15 @@ RSpec.describe Student do
       auth = {
         provider: "google",
         uid: "12345678910",
-        info: {
-          email: "priya@power.com",
-          first_name: "Priya",
-          last_name: "Power"
-        },
-        credentials: {
-          token: "abcdefg12345",
-          refresh_token: "12345abcdefg",
-        }
+        email: "priya@power.com",
+        first_name: "Priya",
+        last_name: "Power",
+        token: "abcdefg12345",
+        refresh_token: "12345abcdefg"
       }
-      Student.update_or_create(auth)
-      new_user = Student.first
 
+      Student.update_or_create(auth)
+      new_user = Student.last
       expect(new_user.provider).to eq("google")
       expect(new_user.uid).to eq("12345678910")
       expect(new_user.email).to eq("priya@power.com")
