@@ -12,7 +12,7 @@ module Api
       end
 
       def create
-        Student.create(student_params)
+        Student.update_or_create(student_params)
         render json: StudentSerializer.new(Student.last)
       end
 
