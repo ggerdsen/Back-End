@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :teachers do
-        resources :courses
+        resources :courses 
       end
       resources :students
     end

@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     module Teachers
       class CoursesController < ApplicationController
 
         def update
-          render json: CourseSerializer.new(Course.update(params[:id], course_params))
+          require "pry"; binding.pry
+          render json: TeacherCourseSerializer.new(Course.update(params[:id], course_params))
           #
         end
 
@@ -12,7 +15,6 @@ module Api
         private
 
         def course_params
-          require "pry"; binding.pry
         end
       end
     end
