@@ -6,7 +6,6 @@ module Api
       class CoursesController < ApplicationController
 
         def update
-          require "pry"; binding.pry
           render json: TeacherCourseSerializer.new(Course.update(params[:id], course_params))
           #
         end
@@ -15,6 +14,7 @@ module Api
         private
 
         def course_params
+          params.permit(:name, :course_code, :school_name)
         end
       end
     end
