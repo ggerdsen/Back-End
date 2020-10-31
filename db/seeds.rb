@@ -7,11 +7,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Teacher.destroy_all
-#Course.destroy_all
+Course.destroy_all
 CourseStudent.destroy_all
-Pom.destroy_all
 Student.destroy_all
+Teacher.destroy_all
+Pom.destroy_all
 
 class Seed
   def self.start
@@ -37,6 +37,8 @@ class Seed
       end
     end
   end
-
+  ActiveRecord::Base.connection.tables.each do |t|
+    ActiveRecord::Base.connection.reset_pk_sequence!(t)
+  end
 end
 Seed.start
