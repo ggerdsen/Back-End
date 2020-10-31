@@ -62,7 +62,6 @@ RSpec.describe 'Teachers API' do
   end
 
   it 'can create a new teacher' do
-    teacher_id = create(:teacher).id
     teacher_params = { name: 'Mr. John Kimble' }
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
