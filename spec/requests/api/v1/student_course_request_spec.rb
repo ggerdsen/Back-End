@@ -20,10 +20,10 @@ RSpec.describe 'student courses' do
       student_points: 0
     })
     post "/api/v1/students/courses", params: student_course_params
-    
+
     expect(response).to be_successful
     returned_student_course = JSON.parse(response.body, symbolize_names: true)
-    expect(returned_student_course[:data][:id].to_i).to eq(course.id)
+    expect(returned_student_course[:data][:attributes][:course_id].to_i).to eq(course.id)
 
     student_course_in_database = CourseStudent.last
     expect(student_course_in_database.course_id).to eq(course.id)
