@@ -32,10 +32,10 @@ RSpec.describe 'teachers courses' do
     })
 
     post "/api/v1/teachers/courses", params: course_params
-
     expect(response).to be_successful
 
     course = JSON.parse(response.body, symbolize_names: true)
+    
   
   end
 end
