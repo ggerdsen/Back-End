@@ -4,6 +4,11 @@ module Api
   module V1
     module Teachers
       class CoursesController < ApplicationController
+        def create
+          render json: TeacherCourseSerializer.new(Course.create(course_params))
+          course = Course.last
+          # course.generate_course_code
+        end
 
         def update
           render json: TeacherCourseSerializer.new(Course.update(course_params))
@@ -19,7 +24,7 @@ module Api
 
         private
         def course_params
-          params.permit(:name, :course_code, :school_name)
+          params.permit(:name, :course_code, :school_name, :teacher_id)
         end
       end
     end
