@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       scope controller: :students do
         get '/find/:uid', to: 'students#find'
       end
+      scope controller: :teachers do
+        get '/find/:uid', to: 'teachers#find'
+      end
     end
   end
 end
