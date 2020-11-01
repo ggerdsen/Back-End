@@ -24,7 +24,7 @@ RSpec.describe 'student courses' do
 
     expect(response).to be_successful
 
-    course = JSON.parse(response.body, symbolize_names: true)
+    returned_course = JSON.parse(response.body, symbolize_names: true)
     require "pry"; binding.pry
   end
 end

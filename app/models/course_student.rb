@@ -8,4 +8,3 @@ class CourseStudent < ApplicationRecord
   validates :student_points, presence: true
   validates_numericality_of :student_points, greater_than_or_equal_to: 0
 end
-d

@@ -30,9 +30,10 @@ class Seed
         course = teacher.courses.create!(
           name: Faker::Educator.subject,
           course_code: Faker::Number.number(digits: 4),
-          school_name: Faker::Educator.university)
+          school_name: Faker::Educator.university,
+          course_points: Faker::Number.within(range: 0..100000))
           students.each do |student|
-            CourseStudent.create!(course_id: course.id, student_id: student.id, points: Faker::Number.within(range: 0..1000))
+            CourseStudent.create!(course_id: course.id, student_id: student.id, student_points: Faker::Number.within(range: 0..1000))
           end
       end
     end

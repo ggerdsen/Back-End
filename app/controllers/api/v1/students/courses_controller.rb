@@ -4,7 +4,8 @@ module Api
       class CoursesController < ApplicationController
 
         def create
-          render json: CourseStudentSerializer.new(CourseStudent.create(student_points: course_params[:student_points], course_id: course_params[:course_id], student_id: course_params[:student_id]))
+          cs = CourseStudent.create(student_points: course_params[:student_points], course_id: course_params[:course_id], student_id: course_params[:student_id])
+          render json: CourseStudentSerializer.new(cs)
         end
 
         private
