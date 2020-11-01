@@ -6,7 +6,7 @@ module Api
       class CoursesController < ApplicationController
         def create
           render json: TeacherCourseSerializer.new(Course.create(course_params))
-          course = Course.last
+          #course = Course.last
           # course.generate_course_code
         end
 
