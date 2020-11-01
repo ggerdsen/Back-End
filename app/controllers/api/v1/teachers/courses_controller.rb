@@ -7,7 +7,6 @@ module Api
 
         def edit
           render json: TeacherCourseSerializer.new(Course.update(params[:id]))
-          binding.pry
         end
 
         def index
