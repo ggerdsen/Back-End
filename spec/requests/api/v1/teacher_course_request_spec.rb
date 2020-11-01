@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'teachers courses' do
-  xit 'updates a course' do
+  it 'updates a course' do
     teacher = create(:teacher)
 
     course = create(:course, teacher_id: teacher.id)
@@ -36,6 +36,6 @@ RSpec.describe 'teachers courses' do
     expect(response).to be_successful
 
     course = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
+  
   end
 end
