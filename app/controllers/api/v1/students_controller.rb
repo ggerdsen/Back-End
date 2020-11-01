@@ -7,6 +7,10 @@ module Api
         render json: StudentSerializer.new(Student.all)
       end
 
+      def find
+        render json: StudentSerializer.new(Student.find_by(uid: params[:uid]))
+      end
+
       def show
         render json: StudentSerializer.new(Student.find(params[:id]))
       end
