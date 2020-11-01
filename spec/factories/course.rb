@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :course do
     name { Faker::Educator.subject }
-    course_code { Faker::Number.number(digits: 4) }
+    course_code { Faker::Alphanumeric.alpha(number: 8) }
     school_name { Faker::Educator.university }
     association :teacher
   end

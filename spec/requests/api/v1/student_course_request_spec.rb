@@ -1,10 +1,9 @@
-# frozen_string_literal: true
 
 require 'rails_helper'
 
-RSpec.describe 'teachers courses' do
-  it 'updates a course' do
-    teacher = create(:teacher)
+RSpec.describe 'student courses' do
+  xit 'updates a course' do
+    student = create(:teacher)
 
     course = create(:course, teacher_id: teacher.id)
 
@@ -22,20 +21,28 @@ RSpec.describe 'teachers courses' do
 
   end
 
-  it 'creates a new course' do
+  it 'creates a new student course' do
     teacher = create(:teacher)
-    course_params = ({
-      name: 'Principals of Real Estate',
+    course = teacher.courses.create({
+      name: 'Principles of Real Estate',
       course_code: 'abcd1234',
       school_name: 'Hogwarts High School',
       teacher_id: teacher.id
     })
+    
+    student = Student.create!(name: Faker::Name.name )
+    course_params = ({
+      teacher_id: teacher.id,
+      course_id: course.id,
+      student_id: student.id,
+      points: 0
+    })
 
-    post "/api/v1/teachers/courses", params: course_params
+    post "/api/v1/students/courses", params: course_params
+    
     expect(response).to be_successful
 
     course = JSON.parse(response.body, symbolize_names: true)
-    
   
   end
 end
