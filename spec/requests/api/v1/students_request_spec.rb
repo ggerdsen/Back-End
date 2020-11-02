@@ -144,21 +144,31 @@ describe 'Students API' do
   end
 
   it 'can create a new student' do
-    student_params = {  first_name: 'Joe',
-                        last_name: 'Smith',
-                        provider: 'google',
-                        uid: '12345678910',
-                        email: 'joe@smith.com',
-                        token: 'abcdefg12345',
-                        refresh_token: '12345abcdefg' }
+    student_params = {
+                      first_name: 'John',
+                      last_name: 'Kimble',
+                      provider: 'google',
+                      uid: '12345',
+                      email: 'example@email.com',
+                      token: '12345655432345',
+                      refresh_token: '1234556532'
+                    }
+
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
     post '/api/v1/students', headers: headers, params: JSON.generate(student_params)
 
+    expect(response).to be_successful
+
     created_student = Student.last
 
-    expect(response).to be_successful
     expect(created_student.first_name).to eq(student_params[:first_name])
+    expect(created_student.last_name).to eq(student_params[:last_name])
+    expect(created_student.provider).to eq(student_params[:provider])
+    expect(created_student.uid).to eq(student_params[:uid])
+    expect(created_student.email).to eq(student_params[:email])
+    expect(created_student.token).to eq(student_params[:token])
+    expect(created_student.refresh_token).to eq(student_params[:refresh_token])
   end
 
   it 'can update an student' do
