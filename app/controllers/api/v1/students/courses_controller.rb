@@ -8,6 +8,11 @@ module Api
           render json: CourseStudentSerializer.new(cs)
         end
 
+        def index
+          #course_students = CourseStudent.where(course_params[:student_id])
+          render json: CourseStudentSerializer.new(CourseStudent.where(student_id: course_params[:student_id]))
+        end
+
         private
         def course_params
           params.permit(:student_points, :course_id, :student_id)
