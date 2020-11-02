@@ -2,15 +2,14 @@ module Api
   module V1
     module Students
       class CoursesController < ApplicationController
+        def index
+          student = Student.find(params[:student_id])
+          render json: StudentDashboardSerializer.new(student.courses)
+        end
 
         def create
           cs = CourseStudent.create(student_points: course_params[:student_points], course_id: course_params[:course_id], student_id: course_params[:student_id])
-          render json: CourseStudentSerializer.new(cs)
-        end
-
-        def index
-          student = Student.find(params[:student_id])
-          render json: CourseStudentSerializer.new(CourseStudent.where(student_id: course_params[:student_id]))
+          render json: StudentEnrollmentSerializer.new(cs)
         end
 
         private
