@@ -13,7 +13,5 @@ RSpec.describe Teacher do
     it { should validate_uniqueness_of :email }
     it { should validate_presence_of :token }
     it { should validate_presence_of :refresh_token }
-    it { should validate_presence_of :school_name }
-    it { should validate_presence_of :school_district }
   end
 end
