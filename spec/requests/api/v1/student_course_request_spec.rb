@@ -62,12 +62,12 @@ RSpec.describe 'student courses' do
     expect(response).to be_successful
 
     returned_courses = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
     expect(returned_courses[:data][0][:id].to_i).to eq(course1.id)
     expect(returned_courses[:data][0][:attributes][:name]).to eq(course1[:name])
-    expect(returned_courses[:data][0][:attributes][:student_id]).to eq(student.id)
+
     expect(returned_courses[:data][1][:id].to_i).to eq(course2.id)
     expect(returned_courses[:data][1][:attributes][:name]).to eq(course2[:name])
-    expect(returned_courses[:data][1][:attributes][:student_id]).to eq(student.id)
+
+    expect(returned_courses[:data].count).to eq(2)
   end
 end
