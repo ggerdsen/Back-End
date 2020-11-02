@@ -14,7 +14,7 @@ module Api
       end
 
       def create
-        Teacher.create(teacher_params)
+        Teacher.update_or_create(teacher_params)
         render json: TeacherSerializer.new(Teacher.last)
       end
 
