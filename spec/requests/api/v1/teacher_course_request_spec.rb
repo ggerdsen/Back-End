@@ -20,5 +20,5 @@ RSpec.describe 'teachers courses' do
     # expect(students[:data].count).to eq(3)
 
 
-  end
+  # end
 end
