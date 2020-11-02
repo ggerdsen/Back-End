@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :teachers do
-        resources :courses
+        get '/courses/find', to: 'search#show'
+        resources :courses do
+        end
       end
+
       namespace :students do
         resources :courses
-        
       end
       resources :students, :teachers
     end
