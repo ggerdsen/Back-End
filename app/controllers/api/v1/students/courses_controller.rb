@@ -9,7 +9,7 @@ module Api
         end
 
         def index
-          #course_students = CourseStudent.where(course_params[:student_id])
+          student = Student.find(params[:student_id])
           render json: CourseStudentSerializer.new(CourseStudent.where(student_id: course_params[:student_id]))
         end
 
