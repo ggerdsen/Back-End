@@ -29,7 +29,7 @@ class Seed
       3.times do |i|
         course = teacher.courses.create!(
           name: Faker::Educator.subject,
-          course_code: Faker::Number.number(digits: 4),
+          course_code: Faker::Alphanumeric.alphanumeric(number: 8),
           school_name: Faker::Educator.university,
           course_points: Faker::Number.within(range: 0..100000))
           students.each do |student|
