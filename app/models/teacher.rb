@@ -10,8 +10,6 @@ class Teacher < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :token, presence: true
   validates :refresh_token, presence: true
-  validates :school_name, presence: true
-  validates :school_district, presence: true
 
     def self.update_or_create(auth)
       teacher = Teacher.find_by(uid: auth[:uid]) || Teacher.new
@@ -22,7 +20,9 @@ class Teacher < ApplicationRecord
         first_name: auth[:first_name],
         last_name: auth[:last_name],
         token: auth[:token],
-        refresh_token: auth[:refresh_token]
+        refresh_token: auth[:refresh_token],
+        school_name: auth[:school_name],
+        school_district: auth[:school_district]
         }
 
       teacher.save
