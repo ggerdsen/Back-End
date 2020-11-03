@@ -5,12 +5,16 @@ module Api
         render json: TeacherSerializer.new(Teacher.all)
       end
 
+      def find
+        render json: TeacherSerializer.new(Teacher.find_by(uid: params[:uid]))
+      end
+
       def show
         render json: TeacherSerializer.new(Teacher.find(params[:id]))
       end
 
       def create
-        Teacher.create(teacher_params)
+        Teacher.update_or_create(teacher_params)
         render json: TeacherSerializer.new(Teacher.last)
       end
 
