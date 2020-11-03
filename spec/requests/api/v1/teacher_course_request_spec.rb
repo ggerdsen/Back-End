@@ -37,6 +37,26 @@ RSpec.describe 'teachers courses' do
     expect(returned_courses[:data][1][:attributes][:name]).to eq(course2[:name])
     expect(returned_courses[:data].count).to eq(2)
   end
+
+  it 'can create and destroy a course' do
+    teacher = create(:teacher)
+    course_params = ({
+      name: 'Bull Riding',
+      school_name: 'Waylon Academy',
+      teacher_id: teacher.id
+    })
+
+    post "/api/v1/teachers/courses", params: course_params
+    expect(response).to be_successful
+
+    course = JSON.parse(response.body, symbolize_names: true)
+
+    expect(course[:data][:attributes][:name]).to eq(course_params[:name])
+    expect(course[:data][:attributes][:school_name]).to eq(course_params[:school_name])
+    expect(course[:data][:attributes][:teacher_id]).to eq(course_params[:teacher_id])
+
+  end
+
   # it 'updates a course' do
   #   teacher = create(:teacher)
   #
@@ -56,20 +76,5 @@ RSpec.describe 'teachers courses' do
   #
   # end
   #
-  # it 'creates a new course' do
-  #   teacher = create(:teacher)
-  #   course_params = ({
-  #     name: 'Principals of Real Estate',
-  #     course_code: 'abcd1234',
-  #     school_name: 'Hogwarts High School',
-  #     teacher_id: teacher.id
-  #   })
   #
-  #   post "/api/v1/teachers/courses", params: course_params
-  #   expect(response).to be_successful
-  #
-  #   course = JSON.parse(response.body, symbolize_names: true)
-  #
-  #
-  # end
 end
