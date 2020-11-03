@@ -8,6 +8,8 @@ Rails.application.routes.draw do
         resources :courses
       end
       resources :students, :teachers
+      get '/pom/single_trivia_question', to: 'poms#single_trivia_question'
     end
   end
+
 end

@@ -28,7 +28,7 @@ module Api
       private
 
       def student_params
-        params.permit(:name)
+        params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token)
       end
     end
   end
