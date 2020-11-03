@@ -14,6 +14,10 @@ module Api
         def update
           render json: TeacherCourseSerializer.new(Course.update(course_params))
         end
+        
+        def edit
+          render json: TeacherCourseSerializer.new(Course.update(params[:id]))
+        end
 
         def index
           render json: TeacherCourseSerializer.new(Course.all)
