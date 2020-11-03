@@ -10,18 +10,17 @@ class Student < ApplicationRecord
   validates :uid, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :token, presence: true
-  validates :refresh_token, presence: true
+  # validates :refresh_token, presence: true
 
   def self.update_or_create(auth)
-    student = Student.find_by(uid: auth[:uid]) || Student.new
+    student = Student.find_by(uid: auth[:user_data][:uid]) || Student.new
     student.attributes = {
-      provider: auth[:provider],
-      uid: auth[:uid],
-      email: auth[:email],
-      first_name: auth[:first_name],
-      last_name: auth[:last_name],
-      token: auth[:token],
-      refresh_token: auth[:refresh_token]
+      provider: auth[:user_data][:provider],
+      uid: auth[:user_data][:uid],
+      email: auth[:user_data][:info][:email],
+      first_name: auth[:user_data][:info][:first_name],
+      last_name: auth[:user_data][:info][:last_name],
+      token: auth[:user_data][:credentials][:token]
       }
 
     student.save
