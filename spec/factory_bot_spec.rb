@@ -29,7 +29,7 @@ RSpec.describe 'FactoryBot' do
     expect(Course.all.count).to eq(3)
     Course.all.each do |course|
       expect(course.name).to be_a(String)
-      expect(course.course_code).to be_an(Integer)
+      expect(course.course_code).to be_an(String)
       expect(course.school_name).to be_a(String)
       expect(course.teacher_id).to be_an(Integer)
       expect(course.id).to be_an(Integer)
@@ -41,7 +41,7 @@ RSpec.describe 'FactoryBot' do
 
     expect(CourseStudent.all.count).to eq(3)
     CourseStudent.all.each do |course_student|
-      expect(course_student.points).to be_an(Integer)
+      expect(course_student.student_points).to be_an(Integer)
       expect(course_student.id).to be_an(Integer)
     end
   end
