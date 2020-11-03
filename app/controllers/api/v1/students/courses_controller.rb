@@ -12,6 +12,11 @@ module Api
           render json: StudentEnrollmentSerializer.new(cs)
         end
 
+        def destroy
+          result = CourseStudent.where('student_id = ? AND course_id = ?', course_params[:student_id], course_params[:course_id])
+          result.destroy_all
+        end
+
         private
         def course_params
           params.permit(:student_points, :course_id, :student_id)

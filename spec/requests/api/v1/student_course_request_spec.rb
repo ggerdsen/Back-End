@@ -70,4 +70,30 @@ RSpec.describe 'student courses' do
 
     expect(returned_courses[:data].count).to eq(2)
   end
+
+  it 'can unenroll a student from a course' do
+    teacher = create(:teacher)
+
+    course = teacher.courses.create({
+      name: 'You Should See Me',
+      course_code: '1a2b3c4d',
+      school_name: 'Hogwarts High School',
+      teacher_id: teacher.id,
+      course_points: 0
+    })
+    student = create(:student)
+
+    student.course_students.create(course_id: course.id, student_points: 0)
+
+    student_course_params = ({
+        course_id: course.id,
+        student_id: student.id,
+        student_points: 0
+      })
+    expect(CourseStudent.count).to eq(1)
+    delete "/api/v1/students/courses/#{course.id}", params: student_course_params
+    expect(response).to be_successful
+    expect(CourseStudent.count).to eq(0)
+    expect{CourseStudent.find(student.id)}.to raise_error(ActiveRecord::RecordNotFound)
+  end
 end
