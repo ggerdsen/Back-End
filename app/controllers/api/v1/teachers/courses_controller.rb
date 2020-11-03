@@ -15,7 +15,9 @@ module Api
         end
 
         def update
-          render json: TeacherCourseSerializer.new(Course.update(course_params))
+          course = Course.find(params[:course_id])
+          course.update(course_params)
+          render json: TeacherCourseSerializer.new(course)
         end
 
         def show

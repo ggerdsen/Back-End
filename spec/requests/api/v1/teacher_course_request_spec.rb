@@ -75,17 +75,19 @@ RSpec.describe 'teachers courses' do
   it 'can update a course' do
     teacher = create(:teacher)
 
-    course = create(:course, teacher_id: teacher.id)
+    course1 = create(:course, teacher_id: teacher.id)
     update_params = ({
-      name: "I am updated!"
-      })
+      name: "I am updated!",
+      course_id: course1.id
+    })
+    course2 = create(:course, teacher_id: teacher.id)
 
-    patch "/api/v1/teachers/courses/#{course.id}", params: update_params
-
+    patch "/api/v1/teachers/courses/#{course1.id}", params: update_params
     expect(response).to be_successful
 
     update_course = JSON.parse(response.body, symbolize_names: true)
-    expect(update_course[:data][0][:attributes][:name]).to_not eq(course.name)
-    expect(update_course[:data][0][:attributes][:name]).to eq(update_params[:name])
+    expect(update_course[:data][:attributes][:name]).to_not eq(course1.name)
+    expect(update_course[:data][:attributes][:name]).to eq(update_params[:name])
+    expect(update_course[:data][:attributes][:name]).to_not eq(course2.name)
   end
 end
