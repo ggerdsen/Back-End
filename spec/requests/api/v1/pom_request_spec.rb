@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe 'Pom Api' do
 
-  it 'sends one trivia question' do
-
+  it 'sends one trivia question', :vcr do
     get '/api/v1/pom/single_trivia_question'
     expect(response.status).to eq(200)
 
@@ -28,5 +27,4 @@ describe 'Pom Api' do
     expect(body[:results].first).to have_key(:incorrect_answers)
     expect(body[:results].first[:incorrect_answers]).to be_an(Array)
   end
-
 end
