@@ -38,7 +38,7 @@ RSpec.describe 'teachers courses' do
     expect(returned_courses[:data].count).to eq(2)
   end
 
-  it 'can create and destroy a course' do
+  it 'can create a course' do
     teacher = create(:teacher)
     course_params = ({
       name: 'Bull Riding',
@@ -54,6 +54,22 @@ RSpec.describe 'teachers courses' do
     expect(course[:data][:attributes][:name]).to eq(course_params[:name])
     expect(course[:data][:attributes][:school_name]).to eq(course_params[:school_name])
     expect(course[:data][:attributes][:teacher_id]).to eq(course_params[:teacher_id])
+
+  end
+
+  it 'can destroy a course' do
+    teacher = create(:teacher)
+    course = teacher.courses.create({
+      name: 'Bull Riding',
+      school_name: 'Waylon Academy'
+    })
+
+    expect(Course.count).to eq(1)
+    delete "/api/v1/teachers/courses/#{course.id}"
+    expect(response).to be_successful
+    expect(Course.count).to eq(0)
+
+    expect{Course.find(course.id)}.to raise_error(ActiveRecord::RecordNotFound)
 
   end
 
