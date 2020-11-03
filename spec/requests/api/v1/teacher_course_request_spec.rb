@@ -20,7 +20,7 @@ RSpec.describe 'teachers courses' do
       course_points: 0
     })
     teacher2 = create(:teacher)
-    not_enrolled_course = teacher2.courses.create({
+    teacher2.courses.create({
       name: 'You Shouldnt See Me',
       course_code: '1a2b3c4d',
       school_name: 'Hogwarts High School',
@@ -70,27 +70,22 @@ RSpec.describe 'teachers courses' do
     expect(Course.count).to eq(0)
 
     expect{Course.find(course.id)}.to raise_error(ActiveRecord::RecordNotFound)
-
   end
 
-  # it 'updates a course' do
-  #   teacher = create(:teacher)
-  #
-  #   course = create(:course, teacher_id: teacher.id)
-  #
-  #   patch "/api/v1/teachers/courses/#{course.id}"
-  #
-  #   expect(response).to be_successful
-  #
-  #   course = JSON.parse(response.body, symbolize_names: true)
-  #   # expect(response).to be_successful
-  #   #
-  #   # expect(students).to have_key(:data)
-  #   # expect(students[:data]).to be_an(Array)
-  #   # expect(students[:data].count).to eq(3)
-  #
-  #
-  # end
-  #
-  #
+  it 'can update a course' do
+    teacher = create(:teacher)
+
+    course = create(:course, teacher_id: teacher.id)
+    update_params = ({
+      name: "I am updated!"
+      })
+
+    patch "/api/v1/teachers/courses/#{course.id}", params: update_params
+
+    expect(response).to be_successful
+
+    update_course = JSON.parse(response.body, symbolize_names: true)
+    expect(update_course[:data][0][:attributes][:name]).to_not eq(course.name)
+    expect(update_course[:data][0][:attributes][:name]).to eq(update_params[:name])
+  end
 end
