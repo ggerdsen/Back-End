@@ -4,12 +4,17 @@ module Api
       class CoursesController < ApplicationController
         def index
           student = Student.find(params[:student_id])
-          render json: StudentDashboardSerializer.new(student.courses)
+          render json: CourseSerializer.new(student.courses)
+        end
+
+        def show
+          course = Course.find(params[:id])
+          render json: CourseSerializer.new(course)
         end
 
         def create
-          cs = CourseStudent.create(student_points: course_params[:student_points], course_id: course_params[:course_id], student_id: course_params[:student_id])
-          render json: StudentEnrollmentSerializer.new(cs)
+          join_record = CourseStudent.create(student_points: course_params[:student_points], course_id: course_params[:course_id], student_id: course_params[:student_id])
+          render json: StudentEnrollmentSerializer.new(join_record)
         end
 
         def destroy
