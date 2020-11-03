@@ -4,8 +4,12 @@ module Api
   module V1
     module Teachers
       class CoursesController < ApplicationController
+        def index
+          teacher = Teacher.find(params[:teacher_id])
+          render json: TeacherCourseSerializer.new(teacher.courses)
+        end
+
         def create
-          
           render json: TeacherCourseSerializer.new(Course.create(course_params))
           #course = Course.last
           # course.generate_course_code
@@ -13,10 +17,6 @@ module Api
 
         def update
           render json: TeacherCourseSerializer.new(Course.update(course_params))
-        end
-
-        def index
-          render json: TeacherCourseSerializer.new(Course.all)
         end
 
         def show
