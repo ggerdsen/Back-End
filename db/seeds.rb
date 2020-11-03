@@ -16,44 +16,46 @@ Pom.destroy_all
 class Seed
   def self.start
     seed = Seed.new
-    seed.generate_connect_teachers
+    seed.seed_students_teachers_courses
     seed.no_connect_courses
     ActiveRecord::Base.connection.tables.each do |t|
       ActiveRecord::Base.connection.reset_pk_sequence!(t)
     end
   end
 
-  def generate_connect_teachers
-    students = []
+  def seed_students_teachers_courses
     20.times do |i|
-      students << Student.create!(name: Faker::Name.name )
+      Student.create!(name: Faker::Name.name )
     end
-    5.times do |i|
+    10.times do |i|
       teacher = Teacher.create!(name: Faker::Name.name)
-      3.times do |i|
+      2.times do |i|
         course = teacher.courses.create!(
           name: Faker::Educator.subject,
           course_code: Faker::Alphanumeric.alphanumeric(number: 8),
           school_name: Faker::Educator.university,
-          course_points: Faker::Number.within(range: 0..100000))
-          students.each do |student|
-            CourseStudent.create!(course_id: course.id, student_id: student.id, student_points: Faker::Number.within(range: 0..1000))
-          end
+          course_points: Faker::Number.within(range: 0..100000)
+        )
+        rand(1..3).times do
+          CourseStudent.create!(course_id: course.id, student_id: Student.ids.sample, student_points: Faker::Number.within(range: 0..1000))
+        end
       end
     end
   end
-  #sad path seeds (teachers with courses and no connections to students)
+
+    #sad path seeds (teachers with courses and no connections to students)
   def no_connect_courses
-    3.times do |i|
+    2.times do |i|
       teacher = Teacher.create!(name: Faker::Name.name)
-      3.times do |i|
+      2.times do |i|
         course = teacher.courses.create!(
           name: Faker::Educator.subject,
           course_code: Faker::Alphanumeric.alphanumeric(number: 8),
           school_name: Faker::Educator.university,
-          course_points: Faker::Number.within(range: 0..100000))
-        end
+          course_points: Faker::Number.within(range: 0..100000)
+        )
       end
+    end
   end
 end
 Seed.start
