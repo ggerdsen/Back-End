@@ -11,8 +11,6 @@ module Api
 
         def create
           render json: TeacherCourseSerializer.new(Course.create(course_params))
-          #course = Course.last
-          # course.generate_course_code
         end
 
         def update
