@@ -21,6 +21,10 @@ module Api
           render json: TeacherCourseSerializer.new(Course.find(params[:id]))
         end
 
+        def destroy
+          Course.destroy(params[:id])
+        end
+
         private
         def course_params
           params.permit(:name, :course_code, :school_name, :teacher_id)
