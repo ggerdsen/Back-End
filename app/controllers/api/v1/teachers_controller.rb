@@ -14,11 +14,13 @@ module Api
       end
 
       def create
-        Teacher.update_or_create(teacher_params)
-        render json: TeacherSerializer.new(Teacher.last)
+        teacher_params = JSON.parse(request.body.read, symbolize_names: true)
+        teacher =         Teacher.update_or_create(teacher_params)
+        render json: TeacherSerializer.new(teacher)
       end
 
       def update
+        teacher_params = JSON.parse(request.body.read, symbolize_names: true)
         render json: TeacherSerializer.new(Teacher.update(params[:id], teacher_params))
       end
 
@@ -27,11 +29,6 @@ module Api
         render body: nil, status: :no_content
       end
 
-      private
-
-      def teacher_params
-        params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token, :school_name, :school_district)
-      end
     end
   end
 end
