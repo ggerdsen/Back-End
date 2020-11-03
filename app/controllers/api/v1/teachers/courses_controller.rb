@@ -6,22 +6,23 @@ module Api
       class CoursesController < ApplicationController
         def index
           teacher = Teacher.find(params[:teacher_id])
-          render json: TeacherCourseSerializer.new(teacher.courses)
+          render json: CourseSerializer.new(teacher.courses)
+        end
+
+        def show
+          course = Course.find(params[:id])
+          render json: CourseSerializer.new(course)
         end
 
         def create
-          render json: TeacherCourseSerializer.new(Course.create(course_params))
+          render json: CourseSerializer.new(Course.create(course_params))
           ActiveRecord::Base.connection.reset_pk_sequence!(Course)
         end
 
         def update
           course = Course.find(params[:course_id])
           course.update(course_params)
-          render json: TeacherCourseSerializer.new(course)
-        end
-
-        def show
-          render json: TeacherCourseSerializer.new(Course.find(params[:id]))
+          render json: CourseSerializer.new(course)
         end
 
         def destroy
