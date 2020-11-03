@@ -11,6 +11,7 @@ module Api
 
         def create
           render json: TeacherCourseSerializer.new(Course.create(course_params))
+          ActiveRecord::Base.connection.reset_pk_sequence!(Course)
         end
 
         def update
