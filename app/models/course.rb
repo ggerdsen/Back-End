@@ -7,6 +7,7 @@ class Course < ApplicationRecord
 
   validates_presence_of :name,
                         :course_code,
-                        :school_name
+                        :school_name,
+                        :course_points
   validates_associated :teacher
 end
