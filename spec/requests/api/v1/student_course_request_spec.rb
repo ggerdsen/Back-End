@@ -85,7 +85,11 @@ RSpec.describe 'student courses' do
     student.course_students.create(course_id: course.id, student_points: 0)
 
     expect(CourseStudent.count).to eq(1)
-    delete "/api/v1/students/courses/#{course.id}"
+    delete_params = ({
+      student_id: student.id, course_id: course.id
+      })
+
+    delete "/api/v1/students/courses/#{course.id}", params: delete_params
     expect(response).to be_successful
     expect(CourseStudent.count).to eq(0)
     expect{CourseStudent.find(student.id)}.to raise_error(ActiveRecord::RecordNotFound)
