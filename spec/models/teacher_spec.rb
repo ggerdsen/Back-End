@@ -16,4 +16,8 @@ RSpec.describe Student do
     it { should validate_presence_of :school_name }
     it { should validate_presence_of :school_district }
   end
+
+  describe 'Relationships' do
+    it { should have_many :wars }
+  end
 end
