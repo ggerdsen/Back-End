@@ -25,10 +25,28 @@ class Seed
 
   def seed_students_teachers_courses
     20.times do |i|
-      Student.create!(name: Faker::Name.name )
+      Student.create!({
+        provider: "Google",
+        uid: Faker::Number.number(digits: 5),
+        email: Faker::Internet.email,
+        token: Faker::Alphanumeric.alphanumeric(number: 12),
+        refresh_token: Faker::Alphanumeric.alphanumeric(number: 12),
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name
+      })
     end
     10.times do |i|
-      teacher = Teacher.create!(name: Faker::Name.name)
+      teacher = Teacher.create!({
+        provider: "Google",
+        uid: Faker::Number.number(digits: 5),
+        email: Faker::Internet.email,
+        token: Faker::Alphanumeric.alphanumeric(number: 12),
+        refresh_token: Faker::Alphanumeric.alphanumeric(number: 12),
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        school_name: Faker::Educator.university,
+        school_district: Faker::Address.city
+      })
       2.times do |i|
         course = teacher.courses.create!(
           name: Faker::Educator.subject,
