@@ -7,10 +7,6 @@ module Api
         render json: StudentSerializer.new(Student.all)
       end
 
-      def find
-        render json: StudentSerializer.new(Student.find_by(uid: params[:uid]))
-      end
-
       def show
         render json: StudentSerializer.new(Student.find(params[:id]))
       end
@@ -29,6 +25,16 @@ module Api
       def destroy
         Student.destroy(params[:id])
         render body: nil, status: :no_content
+      end
+
+      def find
+        render json: StudentSerializer.new(Student.find_by(uid: params[:uid]))
+      end
+
+      private
+
+      def student_params
+        params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token)
       end
     end
   end

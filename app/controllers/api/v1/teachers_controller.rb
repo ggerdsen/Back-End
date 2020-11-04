@@ -15,7 +15,7 @@ module Api
 
       def create
         teacher_params = JSON.parse(request.body.read, symbolize_names: true)
-        teacher =         Teacher.update_or_create(teacher_params)
+        teacher = Teacher.update_or_create(teacher_params)
         render json: TeacherSerializer.new(teacher)
       end
 
@@ -29,6 +29,15 @@ module Api
         render body: nil, status: :no_content
       end
 
+      def find
+        render json: TeacherSerializer.new(Teacher.find_by(uid: params[:uid]))
+      end
+
+      private
+
+      def teacher_params
+        params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token, :school_name, :school_district)
+      end
     end
   end
 end
