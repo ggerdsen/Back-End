@@ -9,5 +9,6 @@ FactoryBot.define do
     email { Faker::Internet.email }
     token { Faker::Alphanumeric.alphanumeric(number: 12) }
     refresh_token { Faker::Alphanumeric.alphanumeric(number: 12) }
+    role { "teacher" }
   end
 end
