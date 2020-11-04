@@ -12,15 +12,12 @@ module Api
       end
 
       def create
-        # Student.create(student_params)
-        # render json: StudentSerializer.new(Student.last)
         student_params = JSON.parse(request.body.read, symbolize_names: true)
         student = Student.update_or_create(student_params)
         render json: StudentSerializer.new(student)
       end
 
       def update
-        # render json: StudentSerializer.new(Student.update(params[:id], student_params))
         student_params = JSON.parse(request.body.read, symbolize_names: true)
         render json: StudentSerializer.new(Student.update(params[:id], student_params))
       end
