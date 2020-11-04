@@ -13,6 +13,10 @@ module Api
           course = Course.find(params[:id])
           render json: CourseSerializer.new(course)
         end
+        
+        def edit
+          render json: TeacherCourseSerializer.new(Course.update(params[:id]))
+        end
 
         def create
           render json: CourseSerializer.new(Course.create(course_params))

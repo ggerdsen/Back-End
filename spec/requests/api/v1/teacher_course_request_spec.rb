@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+                # frozen_string_literal: true
 
 require 'rails_helper'
 
@@ -106,4 +106,5 @@ RSpec.describe 'teachers courses' do
     expect(course[:data][:attributes][:course_points]).to eq(course1.course_points)
     expect(course[:data][:attributes][:teacher_id]).to eq(course1.teacher_id)
   end
+
 end
