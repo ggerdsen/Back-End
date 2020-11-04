@@ -111,10 +111,8 @@ RSpec.describe 'Teachers API' do
     expect(created_teacher.uid).to eq(teacher_params[:uid])
     expect(created_teacher.email).to eq(teacher_params[:email])
     expect(created_teacher.token).to eq(teacher_params[:token])
-    expect(created_teacher.refresh_token).to eq(teacher_params[:refresh_token])
     expect(created_teacher.school_name).to eq(teacher_params[:school_name])
     expect(created_teacher.school_district).to eq(teacher_params[:school_district])
-
   end
 
   it 'can update a teacher' do
