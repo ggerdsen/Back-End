@@ -35,9 +35,6 @@ RSpec.describe 'Teachers API' do
     expect(teacher[:attributes]).to have_key(:token)
     expect(teacher[:attributes][:token]).to be_a(String)
 
-    expect(teacher[:attributes]).to have_key(:refresh_token)
-    expect(teacher[:attributes][:refresh_token]).to be_a(String)
-
     expect(teacher[:attributes]).to have_key(:school_name)
     expect(teacher[:attributes][:school_name]).to be_a(String)
 
@@ -83,9 +80,6 @@ RSpec.describe 'Teachers API' do
 
     expect(teacher[:attributes]).to have_key(:token)
     expect(teacher[:attributes][:token]).to be_a(String)
-
-    expect(teacher[:attributes]).to have_key(:refresh_token)
-    expect(teacher[:attributes][:refresh_token]).to be_a(String)
 
     expect(teacher[:attributes]).to have_key(:school_name)
     expect(teacher[:attributes][:school_name]).to be_a(String)

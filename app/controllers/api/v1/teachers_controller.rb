@@ -26,7 +26,7 @@ module Api
       private
 
       def teacher_params
-        params.permit(:name)
+        params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token, :school_name, :school_district)
       end
     end
   end

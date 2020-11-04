@@ -10,7 +10,6 @@ class Teacher < ApplicationRecord
   validates :uid, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :token, presence: true
-  validates :refresh_token, presence: true
-  validates :school_name, presence: true
-  validates :school_district, presence: true
+  # validates :school_name, presence: true
+  # validates :school_district, presence: true
 end

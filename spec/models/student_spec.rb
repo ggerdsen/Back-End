@@ -12,6 +12,5 @@ RSpec.describe Student do
     it { should validate_presence_of :email }
     it { should validate_uniqueness_of :email }
     it { should validate_presence_of :token }
-    it { should validate_presence_of :refresh_token }
   end
 end
