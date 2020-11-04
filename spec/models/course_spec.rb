@@ -12,4 +12,6 @@ RSpec.describe Course do
   describe 'Relationships' do
     it { should belong_to :teacher }
   end
+
+  # NEEDS A TEST FOR COURSE MODEL METHOD GENERATE CODE
 end
