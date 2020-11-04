@@ -50,7 +50,7 @@ namespace :csv_import do
         name: line[:name],
         course_code: line[:course_code],
         course_points: line[:course_points].to_i,
-        school_name: line[:school_name].to_i,
+        school_name: line[:school_name],
         teacher: Teacher.find(line[:teacher_id].to_i)
       )
     end
