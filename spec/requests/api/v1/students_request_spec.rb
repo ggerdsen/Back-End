@@ -93,8 +93,8 @@ describe 'Students API' do
     expect(student[:attributes]).to have_key(:token)
     expect(student[:attributes][:token]).to be_a(String)
 
-    expect(student[:attributes]).to have_key(:refresh_token)
-    expect(student[:attributes][:refresh_token]).to be_a(String)
+    # expect(student[:attributes]).to have_key(:refresh_token)
+    # expect(student[:attributes][:refresh_token]).to be_a(String)
   end
 
   it 'can get one student by its id' do
@@ -171,7 +171,6 @@ describe 'Students API' do
     expect(response).to be_successful
 
     created_student = Student.last
-
     expect(created_student.first_name).to eq(student_params[:user_data][:info][:first_name])
     expect(created_student.last_name).to eq(student_params[:user_data][:info][:last_name])
     expect(created_student.provider).to eq(student_params[:user_data][:provider])
