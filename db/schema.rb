@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_10_31_213510) do
 
   # These are extensions that must be enabled in order to support this database
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_10_31_213510) do
     t.string "refresh_token"
     t.string "school_name"
     t.string "school_district"
+
   end
 
   add_foreign_key "course_students", "courses"
