@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_10_31_213510) do
+ActiveRecord::Schema.define(version: 2020_11_01_180908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,16 +18,17 @@ ActiveRecord::Schema.define(version: 2020_10_31_213510) do
   create_table "course_students", force: :cascade do |t|
     t.bigint "course_id"
     t.bigint "student_id"
-    t.integer "points"
+    t.integer "student_points", default: 0
     t.index ["course_id"], name: "index_course_students_on_course_id"
     t.index ["student_id"], name: "index_course_students_on_student_id"
   end
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
-    t.integer "course_code"
+    t.string "course_code"
     t.string "school_name"
     t.bigint "teacher_id"
+    t.integer "course_points", default: 0
     t.index ["teacher_id"], name: "index_courses_on_teacher_id"
   end
 
