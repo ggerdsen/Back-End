@@ -34,6 +34,11 @@ module Api
         render json: WarSerializer.new(war)
       end
 
+      def destroy_war
+        War.destroy(params[:id])
+        render body: nil, status: :no_content
+      end
+
       private
 
       def teacher_params
