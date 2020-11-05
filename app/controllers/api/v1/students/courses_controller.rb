@@ -19,6 +19,7 @@ module Api
 
         def destroy
           result = CourseStudent.where('student_id = ? AND course_id = ?', course_params[:student_id], course_params[:course_id])
+          binding.pry
           result.destroy_all
         end
 
