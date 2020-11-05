@@ -63,7 +63,7 @@ Tyler Fields
 <br />
 <br>
 Priya Power
-[<img align="left" alt="Pryia github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-pr]
+[<img align="left" alt="Priya github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-pr]
 [<img align="left" alt="Priya linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-pr]
 <br />
 <br>

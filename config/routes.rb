@@ -5,13 +5,19 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :teachers do
+        get '/courses/find', to: 'search#show'
+        resources :courses do
+        end
+      end
+
+      namespace :students do
         resources :courses
       end
       resources :students, :teachers
-      scope controller: :students do
-        get '/find/:uid', to: 'students#find'
-      end
       get '/pom/single_trivia_question', to: 'poms#single_trivia_question'
+
+      get '/students/find/:uid', to: 'students#find'
+      get '/teachers/find/:uid', to: 'teachers#find'
     end
   end
 
