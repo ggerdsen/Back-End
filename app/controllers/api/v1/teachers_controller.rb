@@ -51,7 +51,7 @@ module Api
       end
 
       def war_params
-        params.permit(:teacher_id, :challenger_course_id, :opponent_course_id, :challenger_course_points, :opponent_course_points)
+        params.permit(:teacher_id, :challenger_course_id, :opponent_course_id, :challenger_course_points, :opponent_course_points, :opponent_course_name)
       end
     end
   end
