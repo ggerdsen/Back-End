@@ -163,13 +163,11 @@ describe 'Students API' do
                           }
                         }
                       }
-
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
     post '/api/v1/students', headers: headers, params: JSON.generate(student_params)
 
     expect(response).to be_successful
-
     created_student = Student.last
     expect(created_student.first_name).to eq(student_params[:user_data][:info][:first_name])
     expect(created_student.last_name).to eq(student_params[:user_data][:info][:last_name])
@@ -187,7 +185,6 @@ describe 'Students API' do
 
     patch "/api/v1/students/#{id}", headers: headers, params: JSON.generate(student_params)
     expect(response).to be_successful
-
     student = Student.find_by(id: id)
     expect(student.first_name).to_not eq(previous_name)
     expect(student.first_name).to eq('Joe')

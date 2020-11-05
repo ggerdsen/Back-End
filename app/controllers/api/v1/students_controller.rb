@@ -7,12 +7,15 @@ module Api
         render json: StudentSerializer.new(Student.all)
       end
 
+      def find
+        render json: StudentSerializer.new(Student.find_by(uid: params[:uid]))
+      end
+
       def show
         render json: StudentSerializer.new(Student.find(params[:id]))
       end
 
       def create
-        # student_params
         creation_params = JSON.parse(request.body.read, symbolize_names: true)
         student = Student.update_or_create(creation_params.to_h)
         render json: StudentSerializer.new(student)
@@ -35,7 +38,6 @@ module Api
       private
 
       def student_params
-        require "pry"; binding.pry
         params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token)
       end
     end

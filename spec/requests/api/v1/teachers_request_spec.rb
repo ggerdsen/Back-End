@@ -163,7 +163,6 @@ RSpec.describe 'Teachers API' do
                           }
                         }
                       }
-
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
     post '/api/v1/teachers', headers: headers, params: JSON.generate(teacher_params)
@@ -171,7 +170,6 @@ RSpec.describe 'Teachers API' do
     expect(response).to be_successful
 
     created_teacher = Teacher.last
-
     expect(created_teacher.first_name).to eq(teacher_params[:user_data][:info][:first_name])
     expect(created_teacher.last_name).to eq(teacher_params[:user_data][:info][:last_name])
     expect(created_teacher.provider).to eq(teacher_params[:user_data][:provider])
