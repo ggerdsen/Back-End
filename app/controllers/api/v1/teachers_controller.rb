@@ -29,6 +29,11 @@ module Api
         render json: TeacherSerializer.new(Teacher.find_by(uid: params[:uid]))
       end
 
+      def my_wars
+        teacher = Teacher.find(war_params[:teacher_id])
+        render json: WarSerializer.new(teacher.wars)
+      end
+
       def create_war
         war = War.create(war_params)
         render json: WarSerializer.new(war)
