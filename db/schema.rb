@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_04_165502) do
+ActiveRecord::Schema.define(version: 2020_11_05_220617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2020_11_04_165502) do
     t.integer "challenger_course_points"
     t.integer "opponent_course_points"
     t.bigint "teacher_id"
+    t.string "opponent_course_name"
     t.index ["teacher_id"], name: "index_wars_on_teacher_id"
   end
 

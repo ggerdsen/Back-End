@@ -74,7 +74,8 @@ namespace :csv_import do
         opponent_course_id: line[:opponent_course_id],
         challenger_course_points: line[:challenger_course_points],
         opponent_course_points: line[:opponent_course_points],
-        teacher: Teacher.find(line[:teacher_id].to_i)
+        teacher: Teacher.find(line[:teacher_id].to_i),
+        opponent_course_name: line[:opponent_course_name]
       )
     end
     puts('War: File imported')
