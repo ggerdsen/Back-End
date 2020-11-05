@@ -2,16 +2,24 @@ require 'rails_helper'
 
 describe 'Pom Api' do
 
-  it 'sends one trivia question', :vcr do
+  it 'sends one trivia question' do
     json_response = File.read('spec/fixtures/trivia_question.json')
-    stub_request(:get, "/api/v1/single_trivia_question").to_return(status: 200, body: json_response)
+    # stub_request(:get, "http://localhost:3001/api/v1/pom/single_trivia_question").to_return(status: 200, body: json_response)
+    stub_request(:get, "http://localhost:3001/api/v1/single_trivia_question").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v1.1.0'
+           }).
+         to_return(status: 200, body: json_response, headers: {})
 
     get '/api/v1/pom/single_trivia_question'
     expect(response.status).to eq(200)
 
 
     body = JSON.parse(response.body, symbolize_names: true)
-    
+
     expect(response.status).to eq(200)
     expect(body).to have_key(:response_code)
     expect(body[:response_code]).to eq(0)
