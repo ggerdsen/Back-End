@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3001/api/v1/single_trivia_question
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html;charset=utf-8
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Length:
+      - '277'
+    body:
+      encoding: UTF-8
+      string: '{"response_code":0,"results":[{"category":"History","type":"multiple","difficulty":"medium","question":"Who
+        was the first explorer to sail to North America?","correct_answer":"Leif Erikson","incorrect_answers":["Christopher
+        Columbus","Amerigo Vespucci","Ferdinand Magellan"]}]}'
+  recorded_at: Tue, 03 Nov 2020 21:59:40 GMT
+recorded_with: VCR 6.0.0
