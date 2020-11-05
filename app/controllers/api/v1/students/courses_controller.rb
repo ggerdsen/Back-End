@@ -14,7 +14,7 @@ module Api
 
         def create
           join_record = CourseStudent.create(student_points: course_params[:student_points], course_id: course_params[:course_id], student_id: course_params[:student_id])
-          render json: StudentEnrollmentSerializer.new(join_record)
+          render json: CourseStudentSerializer.new(join_record)
         end
 
         def destroy
