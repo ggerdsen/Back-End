@@ -25,7 +25,6 @@ class Student < ApplicationRecord
       }
 
     student.save
-
     student
   end
 end

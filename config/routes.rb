@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       end
 
       namespace :students do
+        get '/courses/all-points', to: 'courses#all_points'
         get '/courses/points', to: 'courses#points'
         resources :courses
       end
