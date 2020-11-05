@@ -11,17 +11,7 @@ RSpec.describe 'student points' do
       teacher_id: teacher1.id,
       course_points: 200
     })
-    teacher2 = create(:teacher)
-    course2 = teacher2.courses.create({
-      name: 'Forensic Psychology',
-      course_code: '1234abcd',
-      school_name: 'Hogwarts High School',
-      teacher_id: teacher2.id,
-      course_points: 100
-    })
-
     student = create(:student)
-
     joins1 = student.course_students.create(course_id: course1.id, student_points: 10)
 
     joins_params = ({student_id: student.id, course_id: course1.id})
@@ -32,5 +22,7 @@ RSpec.describe 'student points' do
 
     expect(returned_joins[:data][0][:id].to_i).to eq(joins1.id)
     expect(returned_joins[:data][0][:attributes][:student_points]).to eq(joins1.student_points)
+    expect(returned_joins[:data][0][:attributes][:course_id]).to eq(joins1.course_id)
+    expect(returned_joins[:data][0][:attributes][:student_id]).to eq(joins1.student_id)
   end
 end
