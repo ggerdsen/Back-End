@@ -15,7 +15,7 @@ RSpec.describe 'student points' do
     joins1 = student.course_students.create(course_id: course1.id, student_points: 10)
 
     joins_params = ({student_id: student.id, course_id: course1.id})
-    get "/api/v1/students/total-points", params: joins_params
+    get "/api/v1/students/courses/points", params: joins_params
     expect(response).to be_successful
 
     returned_joins = JSON.parse(response.body, symbolize_names: true)
