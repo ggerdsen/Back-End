@@ -18,7 +18,7 @@ Heroku Link: https://git.heroku.com/polar-anchorage-12813.git
 
 ## Schema 
 
-![alt text](https://dbdiagram.io/d/5fa46c6d3a78976d7b7ab81e)
+![Schema Diagram](https://user-images.githubusercontent.com/60243690/98302591-46dc8a00-1f82-11eb-9bb3-6890aadf0604.png)
 
 ## Contributors
 <br>
