@@ -65,7 +65,8 @@ RSpec.describe 'teachers wars' do
       challenger_course_id: course1.id,
       opponent_course_id: course2.id,
       challenger_course_points: course1.course_points,
-      opponent_course_points: course2.course_points
+      opponent_course_points: course2.course_points,
+      opponent_course_name: course2.name
     })
     expect(War.count).to eq(1)
     delete "/api/v1/teachers/courses/wars/#{war.id}"
@@ -107,13 +108,15 @@ RSpec.describe 'teachers wars' do
       challenger_course_id: course1.id,
       opponent_course_id: course3.id,
       challenger_course_points: course1.course_points,
-      opponent_course_points: course3.course_points
+      opponent_course_points: course3.course_points,
+      opponent_course_name: course3.name 
     })
     war2 = challenger.wars.create({
       challenger_course_id: course2.id,
       opponent_course_id: course4.id,
       challenger_course_points: course2.course_points,
-      opponent_course_points: course4.course_points
+      opponent_course_points: course4.course_points,
+      opponent_course_name: course4.name
     })
     expect(War.count).to eq(2)
     teacher_wars_params = ({

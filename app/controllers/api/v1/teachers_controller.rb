@@ -5,10 +5,6 @@ module Api
         render json: TeacherSerializer.new(Teacher.all)
       end
 
-      def find
-        render json: TeacherSerializer.new(Teacher.find_by(uid: params[:uid]))
-      end
-
       def show
         render json: TeacherSerializer.new(Teacher.find(params[:id]))
       end
@@ -55,7 +51,7 @@ module Api
       end
 
       def war_params
-        params.permit(:teacher_id, :challenger_course_id, :opponent_course_id, :challenger_course_points, :opponent_course_points)
+        params.permit(:teacher_id, :challenger_course_id, :opponent_course_id, :challenger_course_points, :opponent_course_points, :opponent_course_name)
       end
     end
   end

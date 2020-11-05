@@ -6,6 +6,7 @@ RSpec.describe War do
     it { should validate_presence_of :opponent_course_id }
     it { should validate_presence_of :challenger_course_points }
     it { should validate_presence_of :opponent_course_points }
+    it { should validate_presence_of :opponent_course_name }
   end
 
   describe 'Relationships' do
