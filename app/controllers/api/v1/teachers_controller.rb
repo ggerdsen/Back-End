@@ -5,10 +5,6 @@ module Api
         render json: TeacherSerializer.new(Teacher.all)
       end
 
-      def find
-        render json: TeacherSerializer.new(Teacher.find_by(uid: params[:uid]))
-      end
-
       def show
         render json: TeacherSerializer.new(Teacher.find(params[:id]))
       end
