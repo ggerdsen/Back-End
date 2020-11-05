@@ -15,8 +15,11 @@ Rails.application.routes.draw do
         resources :courses
       end
       resources :students, :teachers
+      get '/pom/single_trivia_question', to: 'poms#single_trivia_question'
+
       get '/students/find/:uid', to: 'students#find'
       get '/teachers/find/:uid', to: 'teachers#find'
     end
   end
+
 end
