@@ -31,19 +31,9 @@ module Api
         render json: StudentSerializer.new(Student.find_by(uid: params[:uid]))
       end
 
-      def points
-        result = CourseStudent.where('student_id = ? AND course_id = ?', joins_params[:student_id], joins_params[:course_id])
-        render json: CourseStudentSerializer.new(result)
-      end
-
       private
-
       def student_params
         params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token)
-      end
-
-      def joins_params
-        params.permit(:student_id, :course_id)
       end
     end
   end
