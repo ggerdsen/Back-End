@@ -4,7 +4,7 @@
 
 - The main purpose of this **repo** is to serve as the backend to the larger group project we're calling "Classroom Wars". The GitHub repo's can all be found [here](https://github.com/Classroom-Wars).
 
-- The main purpose of this **application** is to serve teachers in their never-ending quest to engage students in a more meaningful way. Our top priority was providing teachers the tools to engage students in the remote educational setting using gamificaiton methods, but this application can most definitely be applied to the in-person educational setting. 
+- The main purpose of this **application** is to serve teachers in their never-ending quest to engage students in a more meaningful way. Our top priority was providing teachers the tools to engage students in the remote educational setting using gamificaiton methods, but this application can most definitely be applied to the in-person educational setting.
 
 ## Using this repo & using the app
 
@@ -12,7 +12,7 @@
 
 ## Set-up
 
-1. 
+1.
 
 Heroku Link: https://git.heroku.com/polar-anchorage-12813.git
 
@@ -24,7 +24,7 @@ In no particular order...
 
 [<img align="left" alt="arique github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-arique]
 [<img align="left" alt="arique linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-arique]
-Mariveliz Arique Ortiz 
+Mariveliz Arique Ortiz
 <br />
 <br>
 Cam Chery
@@ -62,9 +62,9 @@ Tyler Fields
 [<img align="left" alt="Tyler linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-tyler]
 <br />
 <br>
-Pryia Power
-[<img align="left" alt="Pryia github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-pr]
-[<img align="left" alt="Pryia linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-pr]
+Priya Power
+[<img align="left" alt="Priya github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-pr]
+[<img align="left" alt="Priya linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-pr]
 <br />
 <br>
 Saryn Mooney
@@ -106,7 +106,7 @@ Travis McKinstry
 
 [git-jud]: https://github.com/judithpillado
 [linkedin-jud]: https://www.linkedin.com/in/judith-pillado/
- 
+
 [git-tyler]: https://github.com/fieldstyler
 [linkedin-tyler]: https://www.linkedin.com/in/tyler-fields-583084197/
 

@@ -12,8 +12,9 @@ module Api
       end
 
       def create
-        student_params = JSON.parse(request.body.read, symbolize_names: true)
-        student = Student.update_or_create(student_params)
+        # student_params
+        creation_params = JSON.parse(request.body.read, symbolize_names: true)
+        student = Student.update_or_create(creation_params.to_h)
         render json: StudentSerializer.new(student)
       end
 
@@ -34,6 +35,7 @@ module Api
       private
 
       def student_params
+        require "pry"; binding.pry
         params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token)
       end
     end
