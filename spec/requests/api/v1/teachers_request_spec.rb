@@ -98,21 +98,33 @@ RSpec.describe 'Teachers API' do
   end
 
   it 'can create a new teacher' do
-    teacher_params = { first_name: 'John', last_name: 'Kimble', provider: 'google', uid: '12345', email: 'example@email.com', token: '12345655432345', refresh_token: '1234556532', school_name: 'Whitney Young', school_district: 'Cook County' }
+    teacher_params = { user_data:
+      { provider: 'google',
+        uid: '12345',
+        info: {
+          first_name: 'John',
+          last_name: 'Kimble',
+          email: 'example@email.com',
+          school_name: 'Whitney Young',
+          school_district: 'Cook County'
+        },
+        credentials: {token: '12345655432345'}
+      }
+    }
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
     post '/api/v1/teachers', headers: headers, params: JSON.generate(teacher_params)
     expect(response).to be_successful
 
     created_teacher = Teacher.last
-    expect(created_teacher.first_name).to eq(teacher_params[:first_name])
-    expect(created_teacher.last_name).to eq(teacher_params[:last_name])
-    expect(created_teacher.provider).to eq(teacher_params[:provider])
-    expect(created_teacher.uid).to eq(teacher_params[:uid])
-    expect(created_teacher.email).to eq(teacher_params[:email])
-    expect(created_teacher.token).to eq(teacher_params[:token])
-    expect(created_teacher.school_name).to eq(teacher_params[:school_name])
-    expect(created_teacher.school_district).to eq(teacher_params[:school_district])
+    expect(created_teacher.provider).to eq(teacher_params[:user_data][:provider])
+    expect(created_teacher.uid).to eq(teacher_params[:user_data][:uid])
+    expect(created_teacher.first_name).to eq(teacher_params[:user_data][:info][:first_name])
+    expect(created_teacher.last_name).to eq(teacher_params[:user_data][:info][:last_name])
+    expect(created_teacher.email).to eq(teacher_params[:user_data][:info][:email])
+    expect(created_teacher.school_name).to eq(teacher_params[:user_data][:info][:school_name])
+    expect(created_teacher.school_district).to eq(teacher_params[:user_data][:info][:school_district])
+    expect(created_teacher.token).to eq(teacher_params[:user_data][:credentials][:token])
   end
 
   it 'can update a teacher' do

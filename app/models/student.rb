@@ -13,7 +13,7 @@ class Student < ApplicationRecord
   validates :role, presence: true
 
   def self.update_or_create(auth)
-    student = Student.find_by(uid: auth[:uid]) || Student.new
+    student = Student.find_by(uid: auth[:user_data][:uid]) || Student.new
     student.attributes = {
       provider: auth[:user_data][:provider],
       uid: auth[:user_data][:uid],
