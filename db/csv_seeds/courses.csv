@@ -1,25 +1,30 @@
 "id","name","course_code","school_name","teacher_id","course_points"
-1,"Psychology","asmDguBQ","Marblewald TAFE",1,83206
-2,"Forensic Science","Y8fscgnR","Bluemeadow TAFE",1,83941
-5,"Education","lzORxN2z","Clearcourt College",3,95327
-7,"Communications","acfdXkI3","Lakeacre Technical College",4,75509
-8,"Nursing","0Y0oYjVa","Mallowtown University",4,532
-9,"Applied Science (Psychology)","ao7JaIon","Ironston College",5,56487
-13,"Law","AHUnCI5q","Ostbarrow TAFE",7,64237
-16,"Biomedical Science","OFVS0zG6","Iceborough University",8,13040
-17,"Arts","fD72mWjr","Iceborough College",9,93855
-18,"Health Science","B4rIO8F4","Brighthurst University",9,16548
-20,"Design","ZX8Zy1O5","Ostbarrow University",10,1131
-21,"Biological Science","DHcTSxdE","Ironbarrow Technical College",11,77969
-22,"Criminology","GYzaZlK9","Ironston College",11,15159
-14,"Introduction to C Plus","bJCd1bky","Mallowtown Technical College",7,69112
-11,"Earth Science","xrU5EvSA","Iceborough University",6,93079
-10,"Social Psychology","HmPNqP83","Marblewald College",5,62218
-15,"Calculus I","AfZHUBbz","Vertapple University",8,74455
-12,"History of Miranda Law","rH6YIm8G","Falconholt Technical College",6,4686
-4,"Intro to UI/UX","mzkOvUfw","Mallowpond TAFE",2,84815
-6,"Early Childhood Education","PbOULJjU","Brookville University",3,43150
-3,"Research Statistics","MPb8aonz","Flowerlake Technical College",2,96431
-19,"Creative Writing","oEKFWJAm","Flowerlake University",10,14503
-23,"Intro to Social Sciences","KTpVbmfO","Marblewald University",12,70950
-24,"Technical Writing","3H3A9FIn","Bluemeadow Technical College",12,97519
+1,"Psychology","vjypyizG","Marblewald TAFE",1,83206
+2,"Forensic Science","Vu0AwiCX","Bluemeadow TAFE",1,83941
+3,"Research Statistics","g5JTv4QG","Flowerlake Technical College",2,96431
+4,"Intro to UI/UX","Csr9uJdb","Mallowpond TAFE",2,84815
+5,"Education","4FzKvG3p","Clearcourt College",3,95327
+6,"Early Childhood Education","FOgzDxjf","Brookville University",3,43150
+7,"Communications","yYhsinzl","Lakeacre Technical College",4,75509
+8,"Nursing","3LNDm5NZ","Mallowtown University",4,532
+9,"Applied Science (Psychology)","2nUdyQTT","Ironston College",5,56487
+10,"Social Psychology","fDebQSRE","Marblewald College",5,62218
+11,"Earth Science","zIjkNzgP","Iceborough University",6,93079
+12,"History of Miranda Law","ErUKB2uJ","Falconholt Technical College",6,4686
+13,"Law","TRFVagdT","Ostbarrow TAFE",7,64237
+14,"Introduction to C Plus","NwoMGCCw","Mallowtown Technical College",7,69112
+15,"Calculus I","hwi94mrD","Vertapple University",8,74455
+16,"Biomedical Science","lNPCmsy5","Iceborough University",8,13040
+17,"Arts","5IgMvzBJ","Iceborough College",9,93855
+18,"Health Science","S2eRXwWA","Brighthurst University",9,16548
+19,"Creative Writing","Un8vCFFz","Flowerlake University",10,14503
+20,"Design","iapqDjRt","Ostbarrow University",10,1131
+21,"Biological Science","BHyryCx9","Ironbarrow Technical College",11,77969
+22,"Criminology","blUxD72k","Ironston College",11,15159
+23,"Intro to Social Sciences","OYxDrWvO","Marblewald University",12,70950
+24,"Technical Writing","9sS9NKCM","Bluemeadow Technical College",12,97519
+27,"Algebra 1 Period 1","ia3u3ZOS","Hogwarts High",13,345
+28,"Algebra 1 Period 3","hRariahJ","Hogwarts High",13,287
+29,"Algebra 1 Period 4","LLQfmJIk","Hogwarts High",13,926
+30,"Math Models Period 6","9horFX6U","Hogwarts High",13,725
+31,"Math Models Period 8","2PLA1ZS7","Hogwarts High",13,134
