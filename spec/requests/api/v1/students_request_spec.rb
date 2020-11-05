@@ -47,9 +47,6 @@ describe 'Students API' do
     expect(student[:attributes]).to have_key(:token)
     expect(student[:attributes][:token]).to be_a(String)
 
-    expect(student[:attributes]).to have_key(:refresh_token)
-    expect(student[:attributes][:refresh_token]).to be_a(String)
-
     expect(student).to have_key(:relationships)
     expect(student[:relationships]).to be_a(Hash)
 
@@ -93,9 +90,6 @@ describe 'Students API' do
     expect(student[:attributes]).to have_key(:token)
     expect(student[:attributes][:token]).to be_a(String)
 
-    expect(student[:attributes]).to have_key(:refresh_token)
-    expect(student[:attributes][:refresh_token]).to be_a(String)
-
     expect(student).to have_key(:relationships)
     expect(student[:relationships]).to be_a(Hash)
 
@@ -117,11 +111,10 @@ describe 'Students API' do
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
     post '/api/v1/students', headers: headers, params: JSON.generate(student_params)
-
-    created_student = Student.last
-
     expect(response).to be_successful
-    expect(created_student.first_name).to eq(student_params[:first_name])
+
+    student = Student.last
+    expect(student.first_name).to eq(student_params[:first_name])
   end
 
   it 'can update an student' do
@@ -131,9 +124,9 @@ describe 'Students API' do
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
     patch "/api/v1/students/#{id}", headers: headers, params: JSON.generate(student_params)
-    student = Student.find_by(id: id)
-
     expect(response).to be_successful
+
+    student = Student.find_by(id: id)
     expect(student.first_name).to_not eq(previous_name)
     expect(student.first_name).to eq('Joe')
   end

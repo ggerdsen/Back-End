@@ -1,5 +1,4 @@
 class TeacherSerializer < BaseSerializer
-  attributes :first_name, :last_name, :provider, :uid, :email, :token, :refresh_token, :school_name, :school_district
-  
+  attributes :provider, :uid, :email, :token, :first_name, :last_name, :school_name, :school_district, :role
   has_many :courses
 end
