@@ -1,6 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'teachers wars' do
+  it 'can find another teachers course by course code' do
+    teacher1 = create(:teacher)
+    course1 = create(:course, teacher_id: teacher1.id)
+    teacher2 = create(:teacher)
+    course2 = create(:course, teacher_id: teacher2.id)
+
+    get "/api/v1/teachers/courses/find?coursecode=#{course2.course_code}"
+    expect(response).to be_successful
+    course = JSON.parse(response.body, symbolize_names: true)[:data]
+    expect(course[:attributes][:name]).to_not eq(course1.name)
+    expect(course[:attributes][:name]).to eq(course2.name)
+  end
+
   it 'can create a war' do
     challenger = create(:teacher)
     course1 = challenger.courses.create({
