@@ -27,6 +27,11 @@ module Api
           render json: CourseStudentSerializer.new(result)
         end
 
+        def all_points
+          result = CourseStudent.where(student_id: joins_params[:student_id])
+          render json: CourseStudentSerializer.new(result)
+        end
+
         private
         def course_params
           params.permit(:student_points, :course_id, :student_id)
