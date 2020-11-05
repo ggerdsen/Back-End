@@ -33,10 +33,29 @@ module Api
         render json: TeacherSerializer.new(Teacher.find_by(uid: params[:uid]))
       end
 
+      def my_wars
+        teacher = Teacher.find(war_params[:teacher_id])
+        render json: WarSerializer.new(teacher.wars)
+      end
+
+      def create_war
+        war = War.create(war_params)
+        render json: WarSerializer.new(war)
+      end
+
+      def destroy_war
+        War.destroy(params[:id])
+        render body: nil, status: :no_content
+      end
+
       private
 
       def teacher_params
         params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token, :school_name, :school_district)
+      end
+
+      def war_params
+        params.permit(:teacher_id, :challenger_course_id, :opponent_course_id, :challenger_course_points, :opponent_course_points)
       end
     end
   end

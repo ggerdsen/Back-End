@@ -138,43 +138,25 @@ describe 'Students API' do
   end
 
   it 'can create a new student' do
-    student_params = {
-                      :client_id=>"810277124767",
-                      :client_secret=>"c5olVAj",
-                      :user_data=>
-                      {
-                        :provider=>"google_oauth2",
-                        :uid=>"105",
-                        :info=>
-                        {
-                          :name=>"Alex Zander",
-                          :email=>"gio@email.com",
-                          :unverified_email=>"gio@email.com",
-                          :email_verified=>true,
-                          :first_name=>"Alex",
-                          :last_name=>"Zander",
-                          :image=>"https://lh4.googleusercontent.com/-mIqTBC4a5iM/photo.jpg"
-                        },
-                        :credentials=>
-                          {
-                            :token=>"ya29.A0AfH6SMB2OLff",
-                            :expires_at=>1604435737,
-                            :expires=>true
-                          }
-                        }
-                      }
+
+    student_params = { user_data:
+      { provider: 'google',
+        uid: '12345678910',
+        info: {
+          first_name: 'Joe',
+          last_name: 'Smith',
+          email: 'joe@smith.com',
+        },
+        credentials: {token: 'abcdefg12345'}
+      }
+    }
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
     post '/api/v1/students', headers: headers, params: JSON.generate(student_params)
-
     expect(response).to be_successful
-    created_student = Student.last
-    expect(created_student.first_name).to eq(student_params[:user_data][:info][:first_name])
-    expect(created_student.last_name).to eq(student_params[:user_data][:info][:last_name])
-    expect(created_student.provider).to eq(student_params[:user_data][:provider])
-    expect(created_student.uid).to eq(student_params[:user_data][:uid])
-    expect(created_student.email).to eq(student_params[:user_data][:info][:email])
-    expect(created_student.token).to eq(student_params[:user_data][:credentials][:token])
+    student = Student.last
+    expect(student.first_name).to eq(student_params[:user_data][:info][:first_name])
+
   end
 
   it 'can update an student' do

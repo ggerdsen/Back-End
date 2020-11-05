@@ -3,14 +3,14 @@ module Api
     module Teachers
       class SearchController < ApplicationController
         def show
-          exist = Course.find_by(course_code: course_params[:courseCode])
+          exist = Course.find_by(course_code: course_params[:coursecode])
           render json: CourseSerializer.new(exist)
         end
 
         private
 
         def course_params
-          params.permit(:courseCode)
+          params.permit(:coursecode)
         end
       end
     end

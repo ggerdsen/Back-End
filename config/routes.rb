@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :teachers do
         get '/courses/find', to: 'search#show'
+        get '/courses/wars', :action => 'my_wars'
+        post '/courses/wars', :action => 'create_war'
+        delete '/courses/wars/:id', :action => 'destroy_war'
         resources :courses do
         end
       end

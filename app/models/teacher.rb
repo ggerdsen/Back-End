@@ -13,7 +13,7 @@ class Teacher < ApplicationRecord
   validates :role, presence: true
 
   def self.update_or_create(auth)
-    teacher = Teacher.find_by(uid: auth[:uid]) || Teacher.new
+    teacher = Teacher.find_by(uid: auth[:user_data][:uid]) || Teacher.new
     teacher.attributes = {
       provider: auth[:user_data][:provider],
       uid: auth[:user_data][:uid],
