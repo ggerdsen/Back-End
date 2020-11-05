@@ -36,7 +36,6 @@ module Api
       end
 
       private
-
       def student_params
         params.permit(:first_name, :last_name, :provider, :uid, :email, :token, :refresh_token)
       end
