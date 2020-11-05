@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_01_180908) do
+ActiveRecord::Schema.define(version: 2020_11_04_165502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_11_01_180908) do
     t.string "refresh_token"
     t.string "first_name"
     t.string "last_name"
+    t.string "role", default: "student"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -59,9 +60,20 @@ ActiveRecord::Schema.define(version: 2020_11_01_180908) do
     t.string "refresh_token"
     t.string "school_name"
     t.string "school_district"
+    t.string "role", default: "teacher"
+  end
+
+  create_table "wars", force: :cascade do |t|
+    t.integer "challenger_course_id"
+    t.integer "opponent_course_id"
+    t.integer "challenger_course_points"
+    t.integer "opponent_course_points"
+    t.bigint "teacher_id"
+    t.index ["teacher_id"], name: "index_wars_on_teacher_id"
   end
 
   add_foreign_key "course_students", "courses"
   add_foreign_key "course_students", "students"
   add_foreign_key "courses", "teachers"
+  add_foreign_key "wars", "teachers"
 end

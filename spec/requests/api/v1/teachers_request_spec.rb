@@ -35,9 +35,6 @@ RSpec.describe 'Teachers API' do
     expect(teacher[:attributes]).to have_key(:token)
     expect(teacher[:attributes][:token]).to be_a(String)
 
-    expect(teacher[:attributes]).to have_key(:refresh_token)
-    expect(teacher[:attributes][:refresh_token]).to be_a(String)
-
     expect(teacher[:attributes]).to have_key(:school_name)
     expect(teacher[:attributes][:school_name]).to be_a(String)
 
@@ -84,9 +81,6 @@ RSpec.describe 'Teachers API' do
     expect(teacher[:attributes]).to have_key(:token)
     expect(teacher[:attributes][:token]).to be_a(String)
 
-    expect(teacher[:attributes]).to have_key(:refresh_token)
-    expect(teacher[:attributes][:refresh_token]).to be_a(String)
-
     expect(teacher[:attributes]).to have_key(:school_name)
     expect(teacher[:attributes][:school_name]).to be_a(String)
 
@@ -117,10 +111,8 @@ RSpec.describe 'Teachers API' do
     expect(created_teacher.uid).to eq(teacher_params[:uid])
     expect(created_teacher.email).to eq(teacher_params[:email])
     expect(created_teacher.token).to eq(teacher_params[:token])
-    expect(created_teacher.refresh_token).to eq(teacher_params[:refresh_token])
     expect(created_teacher.school_name).to eq(teacher_params[:school_name])
     expect(created_teacher.school_district).to eq(teacher_params[:school_district])
-
   end
 
   it 'can update a teacher' do

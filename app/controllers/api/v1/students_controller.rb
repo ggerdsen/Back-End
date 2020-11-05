@@ -16,17 +16,28 @@ module Api
       end
 
       def create
+<<<<<<< triviaq-microservice2
         Student.update_or_create(student_params)
         render json: StudentSerializer.new(Student.last)
+=======
+        student_params = JSON.parse(request.body.read, symbolize_names: true)
+        student = Student.update_or_create(student_params)
+        render json: StudentSerializer.new(student)
+>>>>>>> main
       end
 
       def update
+        student_params = JSON.parse(request.body.read, symbolize_names: true)
         render json: StudentSerializer.new(Student.update(params[:id], student_params))
       end
 
       def destroy
         Student.destroy(params[:id])
         render body: nil, status: :no_content
+      end
+
+      def find
+        render json: StudentSerializer.new(Student.find_by(uid: params[:uid]))
       end
 
       private

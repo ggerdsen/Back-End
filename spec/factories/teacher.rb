@@ -11,5 +11,6 @@ FactoryBot.define do
     refresh_token { Faker::Alphanumeric.alphanumeric(number: 12) }
     school_name { Faker::Educator.university }
     school_district { Faker::Address.city }
+    role { "teacher" }
   end
 end

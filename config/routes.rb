@@ -14,11 +14,8 @@ Rails.application.routes.draw do
         resources :courses
       end
       resources :students, :teachers
-      scope controller: :students do
-        get '/find/:uid', to: 'students#find'
-      end
-      get '/pom/single_trivia_question', to: 'poms#single_trivia_question'
+      get '/students/find/:uid', to: 'students#find'
+      get '/teachers/find/:uid', to: 'teachers#find'
     end
   end
-
 end
