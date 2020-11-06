@@ -21,7 +21,7 @@
 5. Setup the database: `rails db:{create,migrate}`
 6. Follow instructions on [Front End Repo](https://github.com/Classroom-Wars/Front-End) for use instructions
 
-[Heroku App Found Here:](polar-anchorage-12813.herokuapp.com)
+[Heroku App Found Here:](http://polar-anchorage-12813.herokuapp.com)
 
 ## Schema 
 
