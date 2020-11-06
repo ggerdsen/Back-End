@@ -20,6 +20,11 @@
 4. Install gem packages: `bundle install`
 5. Setup the database: `rails db:{create,migrate}`
 6. Follow instructions on [Front End Repo](https://github.com/Classroom-Wars/Front-End) for use instructions
+7. Run: `bundle exec figaro install` and the following information as environment variables
+```ruby
+SINATRA_DOMAIN: <add your sinatra server>
+```
+8. For our sinatra server, we recommend ```http://localhost:4567```
 
 [Heroku App Found Here:](http://polar-anchorage-12813.herokuapp.com)
 
