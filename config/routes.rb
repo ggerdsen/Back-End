@@ -9,6 +9,9 @@ Rails.application.routes.draw do
         get '/courses/wars', :action => 'my_wars'
         post '/courses/wars', :action => 'create_war'
         delete '/courses/wars/:id', :action => 'destroy_war'
+        post '/courses/prizes', to: 'prizes#create'
+        get '/courses/all-prizes', to: 'prizes#index'
+        delete '/courses/prizes', to: 'prizes#destroy'
         resources :courses do
         end
       end

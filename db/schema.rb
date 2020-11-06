@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 2020_11_05_220617) do
     t.string "link"
   end
 
+  create_table "prizes", force: :cascade do |t|
+    t.string "name"
+    t.integer "prize_points"
+    t.bigint "course_id"
+    t.index ["course_id"], name: "index_prizes_on_course_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -76,5 +83,6 @@ ActiveRecord::Schema.define(version: 2020_11_05_220617) do
   add_foreign_key "course_students", "courses"
   add_foreign_key "course_students", "students"
   add_foreign_key "courses", "teachers"
+  add_foreign_key "prizes", "courses"
   add_foreign_key "wars", "teachers"
 end

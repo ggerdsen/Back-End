@@ -80,6 +80,17 @@ namespace :csv_import do
     end
     puts('War: File imported')
 
+
+    read_csv('prizes').each do |line|
+      Prize.create!(
+        id: line[:id],
+        name: line[:name],
+        prize_points: line[:prize_points],
+        course: Course.find(line[:course_id].to_i),
+      )
+    end
+    puts('Prizes: File imported')
+
     ActiveRecord::Base.connection.tables.each do |t|
       ActiveRecord::Base.connection.reset_pk_sequence!(t)
     end
