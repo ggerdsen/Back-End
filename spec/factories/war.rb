@@ -5,5 +5,6 @@ FactoryBot.define do
     challenger_course_points { Faker::Number.within(range: 0..100000) }
     opponent_course_points { Faker::Number.within(range: 0..100000) }
     association :teacher
+    opponent_course_name { Faker::Educator.subject }
   end
 end
