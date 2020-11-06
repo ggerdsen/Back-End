@@ -18,9 +18,10 @@
   - If you do not have the correct Rails version, [follow these instructions to install 2.5.4.3](https://github.com/turingschool-examples/task_manager_rails/blob/master/rails_uninstall.md)
 3. Fork and Clone this repo
 4. Install gem packages: `bundle install`
-5. Setup the database: `rails db:create`
+5. Setup the database: `rails db:{create,migrate}`
+6. Follow instructions on [Front End Repo](https://github.com/Classroom-Wars/Front-End) for use instructions
 
-Heroku Link: https://git.heroku.com/polar-anchorage-12813.git
+[Heroku App Found Here:](polar-anchorage-12813.herokuapp.com)
 
 ## Schema 
 
