@@ -25,5 +25,4 @@ Rails.application.routes.draw do
       get '/teachers/find/:uid', to: 'teachers#find'
     end
   end
-
 end
