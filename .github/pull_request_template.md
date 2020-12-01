@@ -24,5 +24,4 @@ _How did you solve the problem?_
 - [ ] Code compiles correctly
 - [ ] Tests for the changes have been added (for bug fixes/features)
 - [ ] All tests passing
-- [ ] No rubocop offenses
 - [ ] Extended the README / documentation, if necessary
