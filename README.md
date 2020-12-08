@@ -3,8 +3,8 @@
 
 ## Associated Repositories
 
-microservice repo: https://github.com/ggerdsen/Sinatra    
-frontend repo: https://github.com/ggerdsen/Front-End
+Microservice Repo: https://github.com/ggerdsen/Sinatra    
+Frontend Repo: https://github.com/ggerdsen/Front-End
 
 ## Purpose
 
