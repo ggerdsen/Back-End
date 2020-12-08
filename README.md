@@ -1,5 +1,10 @@
 # Back-End
 
+## Associated Repositories
+
+microservice repo: https://github.com/ggerdsen/Sinatra
+frontend repo: https://github.com/ggerdsen/Front-End
+
 ## Purpose
 
 - The main purpose of this **repo** is to serve as the backend to the larger group project we're calling "Classroom Wars". The GitHub repo's can all be found [here](https://github.com/Classroom-Wars).
